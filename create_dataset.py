@@ -6,7 +6,6 @@ import argparse
 
 ### No modifique este archivo ###
 
-
 class DataCreator:
     def __init__(self, zip_name):
         self.path = zip_name

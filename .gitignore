@@ -1,2 +1,4 @@
 # Entorno virtual
 venv/
+house_plant_species/
+*.zip
