@@ -17,6 +17,7 @@ def train_model(
     criterion=nn.CrossEntropyLoss(),
 ):
     # Inicializa un experimento único en wandb
+    torch.cuda.empty_cache()
     wandb.init(
         project="Tarea03_Deep_Learning",
         name=f"{architecture_name}-experiment",  # Nombre del experimento

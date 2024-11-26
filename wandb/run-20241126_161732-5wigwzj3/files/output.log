@@ -1,0 +1,4 @@
+Epoch: 1/50 - Time: 368.87s - Train Loss: 1.3939, Train F1: 0.6453 - Validation Loss: 0.7584, Validation F1: 0.7807
+Epoch: 2/50 - Time: 178.35s - Train Loss: 0.4143, Train F1: 0.8759 - Validation Loss: 0.5423, Validation F1: 0.8523
+Epoch: 3/50 - Time: 121.32s - Train Loss: 0.2179, Train F1: 0.9347 - Validation Loss: 0.4717, Validation F1: 0.8629
+Epoch: 4/50 - Time: 117.10s - Train Loss: 0.1351, Train F1: 0.9595 - Validation Loss: 0.4748, Validation F1: 0.8765
