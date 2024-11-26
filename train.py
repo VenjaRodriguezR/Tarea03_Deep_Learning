@@ -7,81 +7,109 @@ import time
 import numpy as np
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-
-#(a) Training parameters
-def train_model(train_data, val_data, model, training_params, num_classes = 10, criterion = nn.CrossEntropyLoss()):
-    #(b) Modelo a la GPU
+def train_model(
+    train_data,
+    val_data,
+    model,
+    training_params,
+    num_classes,
+    criterion=nn.CrossEntropyLoss(),
+):
+    print(f"Using device: {torch.cuda.get_device_name(0) if torch.cuda.is_available() else 'CPU'}")
     model.to(device)
+    optimizer = torch.optim.Adam(
+        model.parameters(),
+        lr=training_params["learning_rate"],
+    )
 
-    #(c) Optimizador Adam con weight decay.
-    optimizer = torch.optim.Adam(model.parameters(), lr = training_params["learning_rate"], weight_decay = training_params["weight_decay"])
+    # DataLoaders
+    train_dataloader = DataLoader(
+        train_data,
+        batch_size=training_params["batch_size"],
+        shuffle=True,
+        num_workers=min(6, torch.get_num_threads()),  # Ajusta dinámicamente el número de workers
+        pin_memory=True,
+        persistent_workers=True,
+    )
+    val_dataloader = DataLoader(
+        val_data,
+        batch_size=training_params["batch_size"],
+        shuffle=False,
+        num_workers=min(6, torch.get_num_threads()),
+        pin_memory=True,
+        persistent_workers=True,
+    )
 
-    #(d) Dataloaders con batch size determinado
-    train_dataloader = DataLoader(train_data, batch_size = training_params["batch_size"], shuffle = True, pin_memory = True, num_workers = 6, drop_last = True)
-    test_dataloader = DataLoader(val_data, batch_size = training_params["batch_size"], shuffle = False, pin_memory = True, num_workers = 6)
+    # Métricas
+    train_metric = torchmetrics.F1Score(task="multiclass", num_classes=num_classes).to(device)
+    val_metric = torchmetrics.F1Score(task="multiclass", num_classes=num_classes).to(device)
 
-    #Definimos las métricas a utilizar en el train y validation
-    train_metric = torchmetrics.F1Score(task = "multiclass", num_classes = num_classes).to(device)
-    test_metric = torchmetrics.F1Score(task = "multiclass", num_classes = num_classes).to(device)
+    # Para guardar el mejor modelo
+    best_val_loss = float("inf")
+    best_model_weights = None
 
-    #Listas para monitorear el loss de train y validation
-    train_losses = []
-    test_losses = []
+    train_loss = []
+    val_loss = []
 
-    #(e) Training y Validation Loop
     for e in range(training_params["num_epochs"]):
-
         start_time = time.time()
 
-        train_batch_losses = []
-        test_batch_losses = []
-
+        # Entrenamiento
         model.train()
-        # (e) Training
+        train_batch_loss = []
+        train_metric.reset()  # Resetea las métricas
         for batch in train_dataloader:
-
-            X, y = batch["X"].to(device), batch["y"].to(device)
+            X, y = batch
+            X, y = X.to(device), y.long().to(device)
 
             optimizer.zero_grad()
-            y_pred = model(X)
-            loss = criterion(y_pred, y)
+            y_hat = model(X)
+            loss = criterion(y_hat, y)
             loss.backward()
             optimizer.step()
-            tm = train_metric(y_pred, y)
-            train_batch_losses.append(loss.item())
-    
-        #Obtenemos el promedio del loss en el entrenamiento de cada batch        
-        tm = train_metric.compute()
-        train_epoch_loss = np.mean(train_batch_losses)
+            train_batch_loss.append(loss.item())
+            train_metric(y_hat, y)
 
+        train_epoch_loss = np.mean(train_batch_loss)
+        train_f1 = train_metric.compute()
+
+        # Validación
         model.eval()
-        #(e) Validation
+        val_batch_loss = []
+        val_metric.reset()
         with torch.no_grad():
+            for batch in val_dataloader:
+                X, y = batch
+                X, y = X.to(device), y.long().to(device)
 
-            for batch in test_dataloader:
+                y_hat = model(X)
+                loss = criterion(y_hat, y)
+                val_batch_loss.append(loss.item())
+                val_metric(y_hat, y)
 
-                X, y = batch["X"].to(device), batch["y"].to(device)
+        val_epoch_loss = np.mean(val_batch_loss)
+        val_f1 = val_metric.compute()
 
-                y_pred = model(X)
-                loss = criterion(y_pred, y)
-                tst_m = test_metric(y_pred, y)
-                test_batch_losses.append(loss.item())
-        
-        #Obtenemos el promedio del loss de cada batch
-        tst_m = test_metric.compute()
-        test_epoch_loss = np.mean(test_batch_losses)
-        end_time = time.time()
+        # Guardar los mejores pesos
+        if val_epoch_loss < best_val_loss:
+            best_val_loss = val_epoch_loss
+            best_model_weights = model.state_dict()
 
-        train_losses.append(train_epoch_loss)
-        test_losses.append(test_epoch_loss)
+        # Métricas de tiempo y logging
+        elapsed_time = time.time() - start_time
+        print(
+            f"Epoch: {e+1}/{training_params['num_epochs']} - "
+            f"Time: {elapsed_time:.2f}s - "
+            f"Train Loss: {train_epoch_loss:.4f}, Train F1: {train_f1:.4f} - "
+            f"Validation Loss: {val_epoch_loss:.4f}, Validation F1: {val_f1:.4f}"
+        )
 
-        epoch_time = end_time - start_time
+        train_loss.append(train_epoch_loss)
+        val_loss.append(val_epoch_loss)
 
-        #(f) Reporte final 
-        print(f"Epoch: {e+1}- Time: {epoch_time:.2f} - Train Loss: {train_epoch_loss:.4f} - Validation Loss: {test_epoch_loss:.4f}- Train F1-Score: {tm:.4f} - Validation F1-Score: {tst_m:.4f}")
+    # Cargar los mejores pesos
+    if best_model_weights is not None:
+        model.load_state_dict(best_model_weights)
+        print("Loaded best model weights based on validation loss.")
 
-
-    model.train()
-
-    #(g) Retornamos el modelo, train loss y validation loss
-    return model, train_losses, test_losses
+    return model, train_loss, val_loss
