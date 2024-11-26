@@ -5,17 +5,33 @@ from torch.utils.data import DataLoader
 import torchmetrics
 import time
 import numpy as np
-
+import wandb
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 def train_model(
     train_data,
     val_data,
     model,
+    architecture_name,  # Nombre de la arquitectura
     training_params,
     num_classes,
     criterion=nn.CrossEntropyLoss(),
 ):
-    print(f"Using device: {torch.cuda.get_device_name(0) if torch.cuda.is_available() else 'CPU'}")
+    # Inicializa un experimento único en wandb
+    wandb.init(
+        project="Tarea03_Deep_Learning",
+        name=f"{architecture_name}-experiment",  # Nombre del experimento
+        tags=[architecture_name, "multiclass", "pretrained"],
+        config={
+            "architecture": architecture_name,
+            "learning_rate": training_params["learning_rate"],
+            "batch_size": training_params["batch_size"],
+            "num_epochs": training_params["num_epochs"],
+            "num_classes": num_classes,
+            "optimizer": "Adam",
+            "criterion": "CrossEntropyLoss",
+        },
+    )
+
     model.to(device)
     optimizer = torch.optim.Adam(
         model.parameters(),
@@ -27,7 +43,7 @@ def train_model(
         train_data,
         batch_size=training_params["batch_size"],
         shuffle=True,
-        num_workers=min(6, torch.get_num_threads()),  # Ajusta dinámicamente el número de workers
+        num_workers=min(6, torch.get_num_threads()),
         pin_memory=True,
         persistent_workers=True,
     )
@@ -44,7 +60,6 @@ def train_model(
     train_metric = torchmetrics.F1Score(task="multiclass", num_classes=num_classes).to(device)
     val_metric = torchmetrics.F1Score(task="multiclass", num_classes=num_classes).to(device)
 
-    # Para guardar el mejor modelo
     best_val_loss = float("inf")
     best_model_weights = None
 
@@ -57,7 +72,7 @@ def train_model(
         # Entrenamiento
         model.train()
         train_batch_loss = []
-        train_metric.reset()  # Resetea las métricas
+        train_metric.reset()
         for batch in train_dataloader:
             X, y = batch
             X, y = X.to(device), y.long().to(device)
@@ -90,16 +105,22 @@ def train_model(
         val_epoch_loss = np.mean(val_batch_loss)
         val_f1 = val_metric.compute()
 
-        # Guardar los mejores pesos
         if val_epoch_loss < best_val_loss:
             best_val_loss = val_epoch_loss
             best_model_weights = model.state_dict()
 
-        # Métricas de tiempo y logging
-        elapsed_time = time.time() - start_time
+        wandb.log({
+            "epoch": e + 1,
+            "train_loss": train_epoch_loss,
+            "train_f1": train_f1.item(),
+            "val_loss": val_epoch_loss,
+            "val_f1": val_f1.item(),
+            "elapsed_time": time.time() - start_time,
+        })
+
         print(
             f"Epoch: {e+1}/{training_params['num_epochs']} - "
-            f"Time: {elapsed_time:.2f}s - "
+            f"Time: {time.time() - start_time:.2f}s - "
             f"Train Loss: {train_epoch_loss:.4f}, Train F1: {train_f1:.4f} - "
             f"Validation Loss: {val_epoch_loss:.4f}, Validation F1: {val_f1:.4f}"
         )
@@ -107,9 +128,10 @@ def train_model(
         train_loss.append(train_epoch_loss)
         val_loss.append(val_epoch_loss)
 
-    # Cargar los mejores pesos
     if best_model_weights is not None:
         model.load_state_dict(best_model_weights)
         print("Loaded best model weights based on validation loss.")
 
+    wandb.finish()
     return model, train_loss, val_loss
+
