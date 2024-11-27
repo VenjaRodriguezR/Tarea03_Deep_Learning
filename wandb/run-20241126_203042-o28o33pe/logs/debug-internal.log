@@ -1,0 +1,17 @@
+{"time":"2024-11-26T20:30:43.012925222-03:00","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2024-11-26T20:30:43.012935696-03:00","level":"INFO","msg":"created symlink","path":"/home/notvenja24/Descargas/Deep Learning/Tarea03_Deep_learning/wandb/run-20241126_203042-o28o33pe/logs/debug-core.log"}
+{"time":"2024-11-26T20:30:43.11660741-03:00","level":"INFO","msg":"created new stream","id":"o28o33pe"}
+{"time":"2024-11-26T20:30:43.116647041-03:00","level":"INFO","msg":"stream: started","id":"o28o33pe"}
+{"time":"2024-11-26T20:30:43.116690431-03:00","level":"INFO","msg":"handler: started","stream_id":"o28o33pe"}
+{"time":"2024-11-26T20:30:43.116913469-03:00","level":"INFO","msg":"writer: Do: started","stream_id":"o28o33pe"}
+{"time":"2024-11-26T20:30:43.116913387-03:00","level":"INFO","msg":"sender: started","stream_id":"o28o33pe"}
+{"time":"2024-11-26T20:30:43.590271318-03:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-26T20:59:08.158742208-03:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-26T20:59:08.162510792-03:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-26T20:59:09.162481224-03:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"saving job artifact","runtime_seconds":0.521998931},{"desc":"uploading config.yaml","runtime_seconds":0.256389698,"progress":"907B/907B"},{"desc":"uploading output.log","runtime_seconds":0.256369683,"progress":"1.8KB/1.8KB"}],"total_operations":3}}
+{"time":"2024-11-26T20:59:12.357750345-03:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-26T20:59:13.841115986-03:00","level":"INFO","msg":"stream: closing","id":"o28o33pe"}
+{"time":"2024-11-26T20:59:13.84112957-03:00","level":"INFO","msg":"handler: closed","stream_id":"o28o33pe"}
+{"time":"2024-11-26T20:59:13.841135473-03:00","level":"INFO","msg":"writer: Close: closed","stream_id":"o28o33pe"}
+{"time":"2024-11-26T20:59:13.841144961-03:00","level":"INFO","msg":"sender: closed","stream_id":"o28o33pe"}
+{"time":"2024-11-26T20:59:13.841189711-03:00","level":"INFO","msg":"stream: closed","id":"o28o33pe"}

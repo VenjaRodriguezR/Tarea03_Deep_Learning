@@ -31,8 +31,8 @@ def train_model(
             "optimizer": "Adam",
             "criterion": "CrossEntropyLoss",
         },
+        settings=wandb.Settings(init_timeout=180)
     )
-
     model.to(device)
     optimizer = torch.optim.Adam(
         model.parameters(),

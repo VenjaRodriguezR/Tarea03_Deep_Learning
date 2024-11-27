@@ -1,0 +1,16 @@
+Epoch: 1/15 - Time: 119.46s - Train Loss: 1.3915, Train F1: 0.6424 - Validation Loss: 0.8108, Validation F1: 0.7657
+Epoch: 2/15 - Time: 115.17s - Train Loss: 0.4118, Train F1: 0.8767 - Validation Loss: 0.5428, Validation F1: 0.8395
+Epoch: 3/15 - Time: 113.00s - Train Loss: 0.2200, Train F1: 0.9325 - Validation Loss: 0.5635, Validation F1: 0.8443
+Epoch: 4/15 - Time: 120.54s - Train Loss: 0.1392, Train F1: 0.9567 - Validation Loss: 0.4941, Validation F1: 0.8629
+Epoch: 5/15 - Time: 117.89s - Train Loss: 0.0878, Train F1: 0.9743 - Validation Loss: 0.5928, Validation F1: 0.8472
+Epoch: 6/15 - Time: 104.58s - Train Loss: 0.0950, Train F1: 0.9717 - Validation Loss: 0.5425, Validation F1: 0.8648
+Epoch: 7/15 - Time: 118.25s - Train Loss: 0.0760, Train F1: 0.9766 - Validation Loss: 0.5411, Validation F1: 0.8604
+Epoch: 8/15 - Time: 116.46s - Train Loss: 0.0738, Train F1: 0.9790 - Validation Loss: 0.6430, Validation F1: 0.8461
+Epoch: 9/15 - Time: 118.92s - Train Loss: 0.0882, Train F1: 0.9736 - Validation Loss: 0.6763, Validation F1: 0.8494
+Epoch: 10/15 - Time: 124.82s - Train Loss: 0.0502, Train F1: 0.9850 - Validation Loss: 0.6434, Validation F1: 0.8520
+Epoch: 11/15 - Time: 111.02s - Train Loss: 0.0672, Train F1: 0.9795 - Validation Loss: 0.7874, Validation F1: 0.8253
+Epoch: 12/15 - Time: 96.88s - Train Loss: 0.0696, Train F1: 0.9780 - Validation Loss: 0.6889, Validation F1: 0.8421
+Epoch: 13/15 - Time: 101.25s - Train Loss: 0.0481, Train F1: 0.9857 - Validation Loss: 0.7064, Validation F1: 0.8461
+Epoch: 14/15 - Time: 117.88s - Train Loss: 0.0365, Train F1: 0.9886 - Validation Loss: 0.6082, Validation F1: 0.8721
+Epoch: 15/15 - Time: 108.16s - Train Loss: 0.0502, Train F1: 0.9851 - Validation Loss: 0.6883, Validation F1: 0.8516
+Loaded best model weights based on validation loss.

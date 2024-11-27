@@ -1,0 +1,7 @@
+{"time":"2024-11-26T22:32:28.979443945-03:00","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2024-11-26T22:32:28.979599366-03:00","level":"INFO","msg":"created symlink","path":"/home/notvenja24/Descargas/Deep Learning/Tarea03_Deep_learning/wandb/run-20241126_223228-ql7ong9r/logs/debug-core.log"}
+{"time":"2024-11-26T22:32:29.081713011-03:00","level":"INFO","msg":"created new stream","id":"ql7ong9r"}
+{"time":"2024-11-26T22:32:29.081731939-03:00","level":"INFO","msg":"stream: started","id":"ql7ong9r"}
+{"time":"2024-11-26T22:32:29.081762814-03:00","level":"INFO","msg":"handler: started","stream_id":"ql7ong9r"}
+{"time":"2024-11-26T22:32:29.081779032-03:00","level":"INFO","msg":"writer: Do: started","stream_id":"ql7ong9r"}
+{"time":"2024-11-26T22:32:29.081822828-03:00","level":"INFO","msg":"sender: started","stream_id":"ql7ong9r"}
