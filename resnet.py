@@ -136,7 +136,6 @@ class Resnet(nn.Module):
         )
 
     def forward(self, x):
-        ############ Cree su código a continuación ##################################
         """
         Realiza el forward pass en el modelo Resnet.
         """
