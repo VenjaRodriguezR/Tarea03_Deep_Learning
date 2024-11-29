@@ -1,0 +1,17 @@
+{"time":"2024-11-29T04:12:15.06267208-03:00","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2024-11-29T04:12:15.062697856-03:00","level":"INFO","msg":"created symlink","path":"/home/josei/workspace/RN/Tarea03_Deep_Learning/wandb/run-20241129_041215-3y3ib6l8/logs/debug-core.log"}
+{"time":"2024-11-29T04:12:15.165513078-03:00","level":"INFO","msg":"created new stream","id":"3y3ib6l8"}
+{"time":"2024-11-29T04:12:15.165533121-03:00","level":"INFO","msg":"stream: started","id":"3y3ib6l8"}
+{"time":"2024-11-29T04:12:15.16564174-03:00","level":"INFO","msg":"writer: Do: started","stream_id":"3y3ib6l8"}
+{"time":"2024-11-29T04:12:15.165728719-03:00","level":"INFO","msg":"sender: started","stream_id":"3y3ib6l8"}
+{"time":"2024-11-29T04:12:15.165729081-03:00","level":"INFO","msg":"handler: started","stream_id":"3y3ib6l8"}
+{"time":"2024-11-29T04:12:15.588864507-03:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-29T04:36:20.886569771-03:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-29T04:36:20.887683322-03:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-29T04:36:21.850661709-03:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"saving job artifact","runtime_seconds":0.480536156},{"desc":"uploading wandb-summary.json","runtime_seconds":0.450072651,"progress":"265B/265B"},{"desc":"uploading config.yaml","runtime_seconds":0.175744856,"progress":"973B/973B"},{"desc":"uploading output.log","runtime_seconds":0.175736002,"progress":"2.9KB/2.9KB"}],"total_operations":4}}
+{"time":"2024-11-29T04:36:22.70076655-03:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-29T04:36:24.530090052-03:00","level":"INFO","msg":"stream: closing","id":"3y3ib6l8"}
+{"time":"2024-11-29T04:36:24.530113371-03:00","level":"INFO","msg":"handler: closed","stream_id":"3y3ib6l8"}
+{"time":"2024-11-29T04:36:24.530124966-03:00","level":"INFO","msg":"writer: Close: closed","stream_id":"3y3ib6l8"}
+{"time":"2024-11-29T04:36:24.530152786-03:00","level":"INFO","msg":"sender: closed","stream_id":"3y3ib6l8"}
+{"time":"2024-11-29T04:36:24.53020286-03:00","level":"INFO","msg":"stream: closed","id":"3y3ib6l8"}

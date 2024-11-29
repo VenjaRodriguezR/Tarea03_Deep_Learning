@@ -1,0 +1,44 @@
+ 18%|█▊        | 9/50 [22:42<1:43:24, 151.34s/it]
+Epoch: 1/50 - Time: 145.49s - Train Loss: 0.9022, Train Accuracy: 0.8111 - Validation Loss: 4.8915, Validation Accuracy: 0.8346
+Model checkpoint saved at epoch 1
+Epoch: 2/50 - Time: 142.37s - Train Loss: 0.2652, Train Accuracy: 0.9320 - Validation Loss: 0.7225, Validation Accuracy: 0.8566
+Model checkpoint saved at epoch 2
+Epoch: 3/50 - Time: 142.54s - Train Loss: 0.1835, Train Accuracy: 0.9504 - Validation Loss: 18.4816, Validation Accuracy: 0.8611
+Epoch: 4/50 - Time: 141.26s - Train Loss: 0.1438, Train Accuracy: 0.9579 - Validation Loss: 8.7837, Validation Accuracy: 0.8488
+Epoch: 5/50 - Time: 142.32s - Train Loss: 0.1166, Train Accuracy: 0.9646 - Validation Loss: 590.2462, Validation Accuracy: 0.8634
+Epoch: 6/50 - Time: 143.61s - Train Loss: 0.0944, Train Accuracy: 0.9725 - Validation Loss: 330.6800, Validation Accuracy: 0.8515
+Epoch: 7/50 - Time: 143.02s - Train Loss: 0.0911, Train Accuracy: 0.9742 - Validation Loss: 1825.8104, Validation Accuracy: 0.8552
+Epoch: 8/50 - Time: 143.28s - Train Loss: 0.0743, Train Accuracy: 0.9778 - Validation Loss: 31.5439, Validation Accuracy: 0.8534
+Epoch: 9/50 - Time: 145.84s - Train Loss: 0.0662, Train Accuracy: 0.9791 - Validation Loss: 6.2663, Validation Accuracy: 0.8625
+[autoreload of transforms failed: Traceback (most recent call last):
+  File "/home/josei/workspace/RN/RNENV/lib64/python3.12/site-packages/IPython/extensions/autoreload.py", line 276, in check
+    superreload(m, reload, self.old_objects)
+  File "/home/josei/workspace/RN/RNENV/lib64/python3.12/site-packages/IPython/extensions/autoreload.py", line 475, in superreload
+    module = reload(module)
+             ^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.12/importlib/__init__.py", line 131, in reload
+    _bootstrap._exec(spec, module)
+  File "<frozen importlib._bootstrap>", line 866, in _exec
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/home/josei/workspace/RN/Tarea03_Deep_Learning/transforms.py", line 42, in <module>
+    "center_Crop": A.CenterCrop(size = (416, 416)),
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/josei/workspace/RN/RNENV/lib64/python3.12/site-packages/albumentations/core/validation.py", line 35, in custom_init
+    config = dct["InitSchema"](**full_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/josei/workspace/RN/RNENV/lib64/python3.12/site-packages/pydantic/main.py", line 212, in __init__
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pydantic_core._pydantic_core.ValidationError: 2 validation errors for InitSchema
+height
+  Field required [type=missing, input_value={'size': (416, 416), 'pad...0, 'always_apply': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.9/v/missing
+width
+  Field required [type=missing, input_value={'size': (416, 416), 'pad...0, 'always_apply': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.9/v/missing
+]
+The autoreload extension is already loaded. To reload it, use:
+  %reload_ext autoreload
+Starting training for model: efficientnet_b5.sw_in12k with architecture_name: efficientnet_b5.sw_in12k_4_augmented_original_network_aug
+Using device: cuda

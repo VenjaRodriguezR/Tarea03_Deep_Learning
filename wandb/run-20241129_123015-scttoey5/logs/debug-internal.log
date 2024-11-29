@@ -1,0 +1,9 @@
+{"time":"2024-11-29T12:30:15.150177659-03:00","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2024-11-29T12:30:15.150193561-03:00","level":"INFO","msg":"created symlink","path":"/home/josei/workspace/RN/Tarea03_Deep_Learning/wandb/run-20241129_123015-scttoey5/logs/debug-core.log"}
+{"time":"2024-11-29T12:30:15.252679321-03:00","level":"INFO","msg":"created new stream","id":"scttoey5"}
+{"time":"2024-11-29T12:30:15.252711437-03:00","level":"INFO","msg":"stream: started","id":"scttoey5"}
+{"time":"2024-11-29T12:30:15.252824769-03:00","level":"INFO","msg":"handler: started","stream_id":"scttoey5"}
+{"time":"2024-11-29T12:30:15.252837244-03:00","level":"INFO","msg":"writer: Do: started","stream_id":"scttoey5"}
+{"time":"2024-11-29T12:30:15.252888518-03:00","level":"INFO","msg":"sender: started","stream_id":"scttoey5"}
+{"time":"2024-11-29T12:30:15.87458598-03:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-29T12:32:28.62985086-03:00","level":"INFO","msg":"Pausing system monitor"}

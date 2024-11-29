@@ -1,35 +1,42 @@
-#Preparemos algoritmo generalizado de transfomaciones con Albumentations
-
-#CATALOGO ESTILO DICCIONARIO DE LAS TRANSFORMACIONES
 import albumentations as A
 from albumentations.pytorch import ToTensorV2
 from torchvision.datasets import ImageFolder
-from PIL import Image
 import numpy as np
 from torch.utils.data import random_split
+from PIL import Image
 
 class Transforms:
+    """
+    Takes an image, converts it to RGB type needed and then applies a series of transformations
+    (see get_transforms())
+
+    Attributes:
+        transform (A.compose): A.compose object with the series of transformations
+    
+    Example of use:
+        train_transforms = A.Compose([A.Resize(256, 256), A.ToFloat(), ToTensorV2()]
+        train_data = ImageFolder("path/to/train/folder", transform = Transforms(train_transforms))
+
+    """
     def __init__(self, transform: A.Compose):
         self.transform = transform
 
-    def __call__(self, image):
-        # Imprime el modo de la imagen antes de cualquier transformación
-        #print(f"Modo de imagen original: {image.mode}")
-
+    def __call__(self, image: Image.Image) -> ToTensorV2:
         # Forzar conversión a RGB si el modo no es RGB
-        if image.mode != 'RGB':
-            image = image.convert('RGB')
-            #print("La imagen fue convertida a RGB.")
+        if image.mode != "RGB":
+            image = image.convert("RGB")
 
         # Convierte a numpy array y aplica las transformaciones
         image = np.array(image)
-        transformed_image = self.transform(image = image)["image"]
+        transformed_image = self.transform(image=image)["image"]
 
-        # Devuelve la imagen transformada
         return transformed_image
 
-
+#########################################################################################
 # Catálogo de transformaciones disponibles
+# WARNING, USING NORMALIZE WILL MOST LIKELY WON'T WORK FOR TRAINING, 
+# IT SEEMS IT CHANGES THE TYPE OF DATA, USE A.ToFloat() instead
+
 TRANSFORMATIONS_DIC = {
     "random_rotate": A.RandomRotate90(p = 0.5),
     "horizontal_flip": A.HorizontalFlip(p = 0.5),
@@ -40,45 +47,72 @@ TRANSFORMATIONS_DIC = {
     "perspective": A.Perspective(scale = (0.05, 0.1), p = 0.3),
     "random_crop": A.RandomCrop(224, 224, p = 1.0),
     "color_jitter": A.ColorJitter(brightness = 0.2, contrast = 0.2, saturation = 0.2, hue = 0.1, p = 0.5),
+    "center_crop": A.CenterCrop(416, 416),
+    "normalize": A.Normalize(mean = (0.485, 0.456, 0.406), std = (0.229, 0.224, 0.225), max_pixel_value = 255.0, p =1.0),
+    "resize": lambda size: A.Resize(size, size)
 }
 
-basic_transforms = A.Compose([A.Resize(256, 256), A.ToFloat(), ToTensorV2()])
+#########################################################################################
 
-# ES IMPORTANTE NOTAR QUE SE RECOMIENDA PARTIR SIEMPRE CON resize
-# Ahora necesitamos una funcion que genere los A.Compose([lista de transfomaciones])
+def get_transforms(selected_transforms: list, resize_size: int = 256, normalize: bool = False, use_float: bool = True) -> A.Compose:
+    """
+    Genera transformaciones dinámicas basadas en los parámetros dados.
 
-def get_transforms(selected_transforms):
+    Args:
+        selected_transforms (list): Lista de transformaciones a aplicar.
+        resize_size (int): Tamaño del resize.
+        normalize (bool): Si debe incluirse `normalize`.
+        use_float (bool): Si debe incluirse `ToFloat`.
 
-    transforms = [A.Resize(256, 256)]
+    Returns:
+        A.Compose: Transformaciones combinadas.
+    """
+    # Transformaciones básicas iniciales con resize
+    transforms = [TRANSFORMATIONS_DIC["resize"](resize_size)]
+
+    # Añadir augmentations seleccionados
     transforms += [TRANSFORMATIONS_DIC[name] for name in selected_transforms]
-    transforms.append(A.ToFloat())
+
+    # Añadir normalización o conversión a flotante y ToTensor
+    if normalize:
+        transforms.append(TRANSFORMATIONS_DIC["normalize"])
+    if use_float:
+        transforms.append(A.ToFloat())
+
     transforms.append(ToTensorV2())
+
     return A.Compose(transforms)
 
-# Preparar datos
-def transforming(selected_transforms):
+
+#########################################################################################
+
+def transforming(selected_transforms: list, resize_size: int = 256, normalize: bool = False, use_float: bool = True) -> tuple:
     """
-    Crea los conjuntos de datos con augmentations para entrenamiento y validación.
-    Aplica solo las transformaciones básicas al conjunto de prueba.
+    Crea los conjuntos de datos con augmentations para entrenamiento
+    Aplica solo las transformaciones básicas al conjunto de validación
+
+    Args:
+        selected_transforms (list): Lista de augmentations a aplicar.
+        resize_size (int): Tamaño del resize inicial.
+        normalize (bool): Si se normalizan los datos.
+        use_float (bool): Si se convierten a flotantes los datos.
+
+    Returns:
+        Tuple: (train_data, validation_data)
     """
-    # Dataset original sin transformaciones para dividir
-    dataset = ImageFolder("house_plant_species/validation")
-    
-    # Dividir en validación y prueba
-    test_size = int(0.2 * len(dataset))
-    validation_size = len(dataset) - test_size
-    validation_data, test_data = random_split(dataset, [validation_size, test_size])
     
     # Crear transformaciones
-    train_augmentations = get_transforms(selected_transforms)
+    train_augmentations = get_transforms(selected_transforms, resize_size, normalize, use_float)
 
-    # Aplicar transformaciones
     train_data = ImageFolder(
         "house_plant_species/train",
         transform = Transforms(train_augmentations),
     )
 
-    validation_data.dataset.transform = Transforms(basic_transforms)  # Cambiar transformación en validación
-    test_data.dataset.transform = Transforms(basic_transforms)  # Transformación básica para prueba
+    validation_data = ImageFolder(
+        "house_plant_species/validation",
+        transform = Transforms(get_transforms([], resize_size, normalize, use_float)) )
 
-    return train_data, validation_data, test_data
+    return train_data, validation_data
+
+

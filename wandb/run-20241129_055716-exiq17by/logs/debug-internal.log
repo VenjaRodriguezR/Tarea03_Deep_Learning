@@ -1,0 +1,17 @@
+{"time":"2024-11-29T05:57:16.381563606-03:00","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2024-11-29T05:57:16.381575018-03:00","level":"INFO","msg":"created symlink","path":"/home/josei/workspace/RN/Tarea03_Deep_Learning/wandb/run-20241129_055716-exiq17by/logs/debug-core.log"}
+{"time":"2024-11-29T05:57:16.490061277-03:00","level":"INFO","msg":"created new stream","id":"exiq17by"}
+{"time":"2024-11-29T05:57:16.490096708-03:00","level":"INFO","msg":"stream: started","id":"exiq17by"}
+{"time":"2024-11-29T05:57:16.490187123-03:00","level":"INFO","msg":"writer: Do: started","stream_id":"exiq17by"}
+{"time":"2024-11-29T05:57:16.49024494-03:00","level":"INFO","msg":"handler: started","stream_id":"exiq17by"}
+{"time":"2024-11-29T05:57:16.490240726-03:00","level":"INFO","msg":"sender: started","stream_id":"exiq17by"}
+{"time":"2024-11-29T05:57:16.869019679-03:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-29T06:25:41.561639991-03:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-29T06:25:41.562462188-03:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-29T06:25:42.522940357-03:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"saving job artifact","runtime_seconds":0.420396428},{"desc":"uploading wandb-summary.json","runtime_seconds":0.324207071,"progress":"263B/263B"},{"desc":"uploading config.yaml","runtime_seconds":0.17171281,"progress":"978B/978B"},{"desc":"uploading output.log","runtime_seconds":0.171705174,"progress":"3.6KB/3.6KB"}],"total_operations":4}}
+{"time":"2024-11-29T06:25:42.862201011-03:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-29T06:25:44.3340252-03:00","level":"INFO","msg":"stream: closing","id":"exiq17by"}
+{"time":"2024-11-29T06:25:44.334036522-03:00","level":"INFO","msg":"handler: closed","stream_id":"exiq17by"}
+{"time":"2024-11-29T06:25:44.334042222-03:00","level":"INFO","msg":"writer: Close: closed","stream_id":"exiq17by"}
+{"time":"2024-11-29T06:25:44.334065959-03:00","level":"INFO","msg":"sender: closed","stream_id":"exiq17by"}
+{"time":"2024-11-29T06:25:44.334120291-03:00","level":"INFO","msg":"stream: closed","id":"exiq17by"}

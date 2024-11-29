@@ -1,0 +1,86 @@
+[
+    {
+        "architecture": "efficientnet_b5.sw_in12k__new_functions_network_aug",
+        "model_type": "efficientnet_b5.sw_in12k",
+        "best_epoch": 3,
+        "best_val_loss": 0.23070377780907397,
+        "best_train_loss": 0.1250114924627075,
+        "max_val_acc": 0.9355870485305786,
+        "test_accuracy": 0.9104204773902893,
+        "training_params": {
+            "learning_rate": 0.0003,
+            "batch_size": 32,
+            "num_epochs": 10
+        }
+    },
+    {
+        "architecture": "efficientnet_b5.sw_in12k__lots_augments_network_aug",
+        "model_type": "efficientnet_b5.sw_in12k",
+        "best_epoch": 6,
+        "best_val_loss": 0.1970279802824708,
+        "best_train_loss": 0.20577992722612515,
+        "max_val_acc": 0.9433531165122986,
+        "test_accuracy": 0.9433272480964661,
+        "training_params": {
+            "learning_rate": 0.0003,
+            "batch_size": 32,
+            "num_epochs": 50
+        }
+    },
+    {
+        "architecture": "efficientnet_b5.sw_in12k__center_bn_drp",
+        "model_type": "efficientnet_b5.sw_in12k",
+        "best_epoch": 7,
+        "best_val_loss": 0.22122688015140052,
+        "best_train_loss": 0.07095233075039671,
+        "max_val_acc": 0.9406121373176575,
+        "test_accuracy": 0.9414991140365601,
+        "training_params": {
+            "learning_rate": 0.0003,
+            "batch_size": 32,
+            "num_epochs": 50
+        }
+    },
+    {
+        "architecture": "efficientnet_b5.sw_in12k__lots_aug_bn_drp",
+        "model_type": "efficientnet_b5.sw_in12k",
+        "best_epoch": 9,
+        "best_val_loss": 0.1896509627636144,
+        "best_train_loss": 0.12131835857803035,
+        "max_val_acc": 0.9483782649040222,
+        "test_accuracy": 0.9524679780006409,
+        "training_params": {
+            "learning_rate": 0.0003,
+            "batch_size": 32,
+            "num_epochs": 50
+        }
+    },
+    {
+        "architecture": "efficientnet_b5.sw_in12k__lots_aug_bn_drp_wd",
+        "model_type": "efficientnet_b5.sw_in12k",
+        "best_epoch": 8,
+        "best_val_loss": 0.190603235979443,
+        "best_train_loss": 0.13104292344764845,
+        "max_val_acc": 0.9479214549064636,
+        "test_accuracy": 0.9506398439407349,
+        "training_params": {
+            "learning_rate": 0.0003,
+            "batch_size": 32,
+            "num_epochs": 50
+        }
+    },
+    {
+        "architecture": "efficientnet_b5.sw_in12k__lots_aug_bn_drp_VAL",
+        "model_type": "efficientnet_b5.sw_in12k",
+        "best_epoch": 9,
+        "best_val_loss": 0.18883399100064538,
+        "best_train_loss": 0.12309349038687771,
+        "max_val_acc": 0.952850878238678,
+        "test_accuracy": 0.0,
+        "training_params": {
+            "learning_rate": 0.0003,
+            "batch_size": 32,
+            "num_epochs": 50
+        }
+    }
+]

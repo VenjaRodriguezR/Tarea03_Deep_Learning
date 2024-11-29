@@ -1,0 +1,18 @@
+{"time":"2024-11-29T13:25:24.641020877-03:00","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2024-11-29T13:25:24.641029459-03:00","level":"INFO","msg":"created symlink","path":"/home/josei/workspace/RN/Tarea03_Deep_Learning/wandb/run-20241129_132524-4kx5z7br/logs/debug-core.log"}
+{"time":"2024-11-29T13:25:24.742869399-03:00","level":"INFO","msg":"created new stream","id":"4kx5z7br"}
+{"time":"2024-11-29T13:25:24.742893473-03:00","level":"INFO","msg":"stream: started","id":"4kx5z7br"}
+{"time":"2024-11-29T13:25:24.742993258-03:00","level":"INFO","msg":"handler: started","stream_id":"4kx5z7br"}
+{"time":"2024-11-29T13:25:24.742987364-03:00","level":"INFO","msg":"writer: Do: started","stream_id":"4kx5z7br"}
+{"time":"2024-11-29T13:25:24.743008038-03:00","level":"INFO","msg":"sender: started","stream_id":"4kx5z7br"}
+{"time":"2024-11-29T13:25:25.47236608-03:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-29T13:26:10.689586951-03:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": context deadline exceeded"}
+{"time":"2024-11-29T14:06:43.791929782-03:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-29T14:06:43.798625856-03:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-29T14:06:44.793178761-03:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading wandb-summary.json","runtime_seconds":0.315273968,"progress":"268B/268B"},{"desc":"saving job artifact","runtime_seconds":0.315125345},{"desc":"uploading config.yaml","runtime_seconds":0.007769112,"progress":"982B/982B"},{"desc":"uploading output.log","runtime_seconds":0.007751125,"progress":"2.1KB/2.1KB"}],"total_operations":4}}
+{"time":"2024-11-29T14:06:45.295386085-03:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-29T14:06:47.142644031-03:00","level":"INFO","msg":"stream: closing","id":"4kx5z7br"}
+{"time":"2024-11-29T14:06:47.142662191-03:00","level":"INFO","msg":"handler: closed","stream_id":"4kx5z7br"}
+{"time":"2024-11-29T14:06:47.142670306-03:00","level":"INFO","msg":"writer: Close: closed","stream_id":"4kx5z7br"}
+{"time":"2024-11-29T14:06:47.142690304-03:00","level":"INFO","msg":"sender: closed","stream_id":"4kx5z7br"}
+{"time":"2024-11-29T14:06:47.142725507-03:00","level":"INFO","msg":"stream: closed","id":"4kx5z7br"}

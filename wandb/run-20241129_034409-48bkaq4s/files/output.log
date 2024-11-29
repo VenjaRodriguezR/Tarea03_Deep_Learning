@@ -1,0 +1,35 @@
+ 42%|████▏     | 21/50 [25:28<35:16, 72.97s/it]
+Epoch: 1/50 - Time: 71.11s - Train Loss: 2.0549, Train Accuracy: 0.5300 - Validation Loss: 1.0786, Validation Accuracy: 0.7437
+Model checkpoint saved at epoch 1
+Epoch: 2/50 - Time: 71.47s - Train Loss: 0.9812, Train Accuracy: 0.7409 - Validation Loss: 0.8160, Validation Accuracy: 0.7748
+Model checkpoint saved at epoch 2
+Epoch: 3/50 - Time: 70.72s - Train Loss: 0.7941, Train Accuracy: 0.7785 - Validation Loss: 0.7405, Validation Accuracy: 0.7967
+Model checkpoint saved at epoch 3
+Epoch: 4/50 - Time: 71.55s - Train Loss: 0.6706, Train Accuracy: 0.8099 - Validation Loss: 0.6891, Validation Accuracy: 0.8058
+Model checkpoint saved at epoch 4
+Epoch: 5/50 - Time: 72.33s - Train Loss: 0.6089, Train Accuracy: 0.8249 - Validation Loss: 0.6556, Validation Accuracy: 0.8086
+Model checkpoint saved at epoch 5
+Epoch: 6/50 - Time: 74.32s - Train Loss: 0.5524, Train Accuracy: 0.8398 - Validation Loss: 0.6430, Validation Accuracy: 0.8200
+Model checkpoint saved at epoch 6
+Epoch: 7/50 - Time: 74.07s - Train Loss: 0.5095, Train Accuracy: 0.8495 - Validation Loss: 0.6279, Validation Accuracy: 0.8209
+Model checkpoint saved at epoch 7
+Epoch: 8/50 - Time: 73.42s - Train Loss: 0.4848, Train Accuracy: 0.8575 - Validation Loss: 0.6398, Validation Accuracy: 0.8223
+Epoch: 9/50 - Time: 72.34s - Train Loss: 0.4540, Train Accuracy: 0.8658 - Validation Loss: 0.6167, Validation Accuracy: 0.8241
+Model checkpoint saved at epoch 9
+Epoch: 10/50 - Time: 72.97s - Train Loss: 0.4335, Train Accuracy: 0.8707 - Validation Loss: 0.6238, Validation Accuracy: 0.8237
+Epoch: 11/50 - Time: 72.50s - Train Loss: 0.3942, Train Accuracy: 0.8810 - Validation Loss: 0.6090, Validation Accuracy: 0.8250
+Model checkpoint saved at epoch 11
+Epoch: 12/50 - Time: 73.12s - Train Loss: 0.3842, Train Accuracy: 0.8812 - Validation Loss: 0.6376, Validation Accuracy: 0.8246
+Epoch: 13/50 - Time: 72.99s - Train Loss: 0.3893, Train Accuracy: 0.8837 - Validation Loss: 0.6068, Validation Accuracy: 0.8342
+Model checkpoint saved at epoch 13
+Epoch: 14/50 - Time: 73.32s - Train Loss: 0.3546, Train Accuracy: 0.8940 - Validation Loss: 0.6477, Validation Accuracy: 0.8205
+Epoch: 15/50 - Time: 73.00s - Train Loss: 0.3451, Train Accuracy: 0.8943 - Validation Loss: 0.6332, Validation Accuracy: 0.8223
+Epoch: 16/50 - Time: 74.21s - Train Loss: 0.3279, Train Accuracy: 0.8991 - Validation Loss: 0.6355, Validation Accuracy: 0.8232
+Epoch: 17/50 - Time: 73.16s - Train Loss: 0.3199, Train Accuracy: 0.9021 - Validation Loss: 0.6513, Validation Accuracy: 0.8205
+Epoch: 18/50 - Time: 73.26s - Train Loss: 0.3159, Train Accuracy: 0.9041 - Validation Loss: 0.6473, Validation Accuracy: 0.8228
+Epoch: 19/50 - Time: 72.40s - Train Loss: 0.3023, Train Accuracy: 0.9077 - Validation Loss: 0.6644, Validation Accuracy: 0.8269
+Epoch: 20/50 - Time: 73.13s - Train Loss: 0.2970, Train Accuracy: 0.9084 - Validation Loss: 0.6502, Validation Accuracy: 0.8282
+Epoch: 21/50 - Time: 72.74s - Train Loss: 0.2847, Train Accuracy: 0.9134 - Validation Loss: 0.6728, Validation Accuracy: 0.8264
+Epoch: 22/50 - Time: 73.90s - Train Loss: 0.2831, Train Accuracy: 0.9105 - Validation Loss: 0.6655, Validation Accuracy: 0.8241
+Epoch: 23/50 - Time: 72.87s - Train Loss: 0.2862, Train Accuracy: 0.9111 - Validation Loss: 0.6516, Validation Accuracy: 0.8282
+Early stopping triggered at epoch 13. Best Validation Loss: 0.6068

@@ -1,0 +1,17 @@
+{"time":"2024-11-29T01:36:17.884084773-03:00","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2024-11-29T01:36:17.88411378-03:00","level":"INFO","msg":"created symlink","path":"/home/josei/workspace/RN/Tarea03_Deep_Learning/wandb/run-20241129_013617-liv7w4mb/logs/debug-core.log"}
+{"time":"2024-11-29T01:36:17.986782472-03:00","level":"INFO","msg":"created new stream","id":"liv7w4mb"}
+{"time":"2024-11-29T01:36:17.986801874-03:00","level":"INFO","msg":"stream: started","id":"liv7w4mb"}
+{"time":"2024-11-29T01:36:17.986882488-03:00","level":"INFO","msg":"sender: started","stream_id":"liv7w4mb"}
+{"time":"2024-11-29T01:36:17.98688946-03:00","level":"INFO","msg":"writer: Do: started","stream_id":"liv7w4mb"}
+{"time":"2024-11-29T01:36:17.986912321-03:00","level":"INFO","msg":"handler: started","stream_id":"liv7w4mb"}
+{"time":"2024-11-29T01:36:18.354023085-03:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-29T01:55:22.43351445-03:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-29T01:55:22.434538089-03:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-29T01:55:23.395628504-03:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"saving job artifact","runtime_seconds":0.351285603},{"desc":"uploading wandb-summary.json","runtime_seconds":0.278665415,"progress":"266B/266B"},{"desc":"uploading config.yaml","runtime_seconds":0.071742549,"progress":"977B/977B"},{"desc":"uploading output.log","runtime_seconds":0.071735092,"progress":"2.5KB/2.5KB"}],"total_operations":4}}
+{"time":"2024-11-29T01:55:23.844684163-03:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-29T01:55:25.666146038-03:00","level":"INFO","msg":"stream: closing","id":"liv7w4mb"}
+{"time":"2024-11-29T01:55:25.666173626-03:00","level":"INFO","msg":"handler: closed","stream_id":"liv7w4mb"}
+{"time":"2024-11-29T01:55:25.666187903-03:00","level":"INFO","msg":"writer: Close: closed","stream_id":"liv7w4mb"}
+{"time":"2024-11-29T01:55:25.666206096-03:00","level":"INFO","msg":"sender: closed","stream_id":"liv7w4mb"}
+{"time":"2024-11-29T01:55:25.666269279-03:00","level":"INFO","msg":"stream: closed","id":"liv7w4mb"}

@@ -1,0 +1,42 @@
+{
+  "os": "Linux-6.11.8-200.fc40.x86_64-x86_64-with-glibc2.39",
+  "python": "3.12.7",
+  "startedAt": "2024-11-29T10:39:24.733033Z",
+  "program": "/home/josei/workspace/RN/Tarea03_Deep_Learning/Fine_tuning.ipynb",
+  "git": {
+    "remote": "git@github.com:VenjaRodriguezR/Tarea03_Deep_Learning.git",
+    "commit": "9c5148a225ac4a0b3f23e370423f84fd4165a44a"
+  },
+  "email": "joseflores@alumnos.uai.cl",
+  "root": "/home/josei/workspace/RN/Tarea03_Deep_Learning",
+  "host": "fedora",
+  "username": "josei",
+  "executable": "/home/josei/workspace/RN/RNENV/bin/python",
+  "codePathLocal": "Fine_tuning.ipynb",
+  "cpu_count": 8,
+  "cpu_count_logical": 16,
+  "gpu": "NVIDIA GeForce RTX 3060 Laptop GPU",
+  "gpu_count": 1,
+  "disk": {
+    "/": {
+      "total": "108790808576",
+      "used": "53472788480"
+    }
+  },
+  "memory": {
+    "total": "16373858304"
+  },
+  "cpu": {
+    "count": 8,
+    "countLogical": 16
+  },
+  "gpu_nvidia": [
+    {
+      "name": "NVIDIA GeForce RTX 3060 Laptop GPU",
+      "memoryTotal": "6442450944",
+      "cudaCores": 3840,
+      "architecture": "Ampere"
+    }
+  ],
+  "cudaVersion": "12.6"
+}

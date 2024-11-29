@@ -1,0 +1,19 @@
+{"time":"2024-11-29T10:47:40.055972671-03:00","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2024-11-29T10:47:40.055980996-03:00","level":"INFO","msg":"created symlink","path":"/home/josei/workspace/RN/Tarea03_Deep_Learning/wandb/run-20241129_104740-sa0ffdd0/logs/debug-core.log"}
+{"time":"2024-11-29T10:47:40.16316434-03:00","level":"INFO","msg":"created new stream","id":"sa0ffdd0"}
+{"time":"2024-11-29T10:47:40.163220349-03:00","level":"INFO","msg":"stream: started","id":"sa0ffdd0"}
+{"time":"2024-11-29T10:47:40.16323808-03:00","level":"INFO","msg":"writer: Do: started","stream_id":"sa0ffdd0"}
+{"time":"2024-11-29T10:47:40.163232582-03:00","level":"INFO","msg":"sender: started","stream_id":"sa0ffdd0"}
+{"time":"2024-11-29T10:47:40.163239416-03:00","level":"INFO","msg":"handler: started","stream_id":"sa0ffdd0"}
+{"time":"2024-11-29T10:47:40.66008489-03:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-29T11:35:46.313597339-03:00","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2024-11-29T11:37:26.742199504-03:00","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2024-11-29T11:37:28.035521084-03:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-29T11:37:28.036487224-03:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-29T11:37:29.03617665-03:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"saving job artifact","runtime_seconds":0.52712353},{"desc":"uploading wandb-summary.json","runtime_seconds":0.440225581,"progress":"269B/269B"},{"desc":"uploading config.yaml","runtime_seconds":0.237057195,"progress":"986B/986B"},{"desc":"uploading output.log","runtime_seconds":0.237050641,"progress":"2.5KB/2.5KB"}],"total_operations":4}}
+{"time":"2024-11-29T11:37:29.825074345-03:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-29T11:37:31.253946753-03:00","level":"INFO","msg":"stream: closing","id":"sa0ffdd0"}
+{"time":"2024-11-29T11:37:31.253967845-03:00","level":"INFO","msg":"handler: closed","stream_id":"sa0ffdd0"}
+{"time":"2024-11-29T11:37:31.253978595-03:00","level":"INFO","msg":"writer: Close: closed","stream_id":"sa0ffdd0"}
+{"time":"2024-11-29T11:37:31.25401706-03:00","level":"INFO","msg":"sender: closed","stream_id":"sa0ffdd0"}
+{"time":"2024-11-29T11:37:31.254045236-03:00","level":"INFO","msg":"stream: closed","id":"sa0ffdd0"}

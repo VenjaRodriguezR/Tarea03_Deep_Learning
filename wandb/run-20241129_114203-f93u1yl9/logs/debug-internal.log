@@ -1,0 +1,17 @@
+{"time":"2024-11-29T11:42:03.75482014-03:00","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2024-11-29T11:42:03.7548305-03:00","level":"INFO","msg":"created symlink","path":"/home/josei/workspace/RN/Tarea03_Deep_Learning/wandb/run-20241129_114203-f93u1yl9/logs/debug-core.log"}
+{"time":"2024-11-29T11:42:03.861355272-03:00","level":"INFO","msg":"created new stream","id":"f93u1yl9"}
+{"time":"2024-11-29T11:42:03.86137646-03:00","level":"INFO","msg":"stream: started","id":"f93u1yl9"}
+{"time":"2024-11-29T11:42:03.861430363-03:00","level":"INFO","msg":"writer: Do: started","stream_id":"f93u1yl9"}
+{"time":"2024-11-29T11:42:03.861530939-03:00","level":"INFO","msg":"sender: started","stream_id":"f93u1yl9"}
+{"time":"2024-11-29T11:42:03.861580598-03:00","level":"INFO","msg":"handler: started","stream_id":"f93u1yl9"}
+{"time":"2024-11-29T11:42:04.314515313-03:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-29T12:28:47.721746575-03:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-29T12:28:47.727675795-03:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-29T12:28:48.694689862-03:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading wandb-summary.json","runtime_seconds":0.392972012,"progress":"266B/266B"},{"desc":"saving job artifact","runtime_seconds":0.392147657},{"desc":"uploading config.yaml","runtime_seconds":0.082208261,"progress":"977B/977B"},{"desc":"uploading output.log","runtime_seconds":0.082196425,"progress":"2.5KB/2.5KB"}],"total_operations":4}}
+{"time":"2024-11-29T12:28:49.067831198-03:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-29T12:28:50.663933162-03:00","level":"INFO","msg":"stream: closing","id":"f93u1yl9"}
+{"time":"2024-11-29T12:28:50.663948334-03:00","level":"INFO","msg":"handler: closed","stream_id":"f93u1yl9"}
+{"time":"2024-11-29T12:28:50.663955447-03:00","level":"INFO","msg":"writer: Close: closed","stream_id":"f93u1yl9"}
+{"time":"2024-11-29T12:28:50.663967543-03:00","level":"INFO","msg":"sender: closed","stream_id":"f93u1yl9"}
+{"time":"2024-11-29T12:28:50.663992236-03:00","level":"INFO","msg":"stream: closed","id":"f93u1yl9"}

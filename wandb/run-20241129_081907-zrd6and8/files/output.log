@@ -1,0 +1,47 @@
+ 12%|█▏        | 6/50 [14:32<1:46:38, 145.41s/it]
+Epoch: 1/50 - Time: 145.11s - Train Loss: 1.1446, Train Accuracy: 0.7372 - Validation Loss: 25.5925, Validation Accuracy: 0.7981
+Model checkpoint saved at epoch 1
+Epoch: 2/50 - Time: 141.62s - Train Loss: 0.2788, Train Accuracy: 0.9204 - Validation Loss: 1.2424, Validation Accuracy: 0.8278
+Model checkpoint saved at epoch 2
+Epoch: 3/50 - Time: 143.71s - Train Loss: 0.1704, Train Accuracy: 0.9521 - Validation Loss: 16.7224, Validation Accuracy: 0.8337
+Epoch: 4/50 - Time: 141.60s - Train Loss: 0.1248, Train Accuracy: 0.9654 - Validation Loss: 503.7188, Validation Accuracy: 0.8392
+Epoch: 5/50 - Time: 145.45s - Train Loss: 0.0915, Train Accuracy: 0.9736 - Validation Loss: 6.0723, Validation Accuracy: 0.8337
+Epoch: 6/50 - Time: 146.35s - Train Loss: 0.0687, Train Accuracy: 0.9811 - Validation Loss: 45.6866, Validation Accuracy: 0.8323
+The autoreload extension is already loaded. To reload it, use:
+  %reload_ext autoreload
+Elementos en Entrenamiento: 10835
+Elementos en Validación: 2189
+Elementos en Prueba: 547
+There are 47 classes!
+
+Estadísticas de las instancias por clase:
+
+Promedio de instancias:
+============================== 230.53
+Desviación estándar:
+============================== 77.46
+Cantidad mínima de instancias:
+============================== 49
+Cantidad máxima de instancias:
+============================== 432
+torch.Size([3, 256, 256])
+Starting training for model: efficientnet_b5.sw_in12k with architecture_name: efficientnet_b5.sw_in12k_4_augmented_original_network_aug
+Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x7f210cb054e0>
+Traceback (most recent call last):
+  File "/home/josei/workspace/RN/RNENV/lib64/python3.12/site-packages/torch/utils/data/dataloader.py", line 1604, in __del__
+    self._shutdown_workers()
+  File "/home/josei/workspace/RN/RNENV/lib64/python3.12/site-packages/torch/utils/data/dataloader.py", line 1568, in _shutdown_workers
+    w.join(timeout=_utils.MP_STATUS_CHECK_INTERVAL)
+  File "/usr/lib64/python3.12/multiprocessing/process.py", line 149, in join
+    res = self._popen.wait(timeout)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.12/multiprocessing/popen_fork.py", line 40, in wait
+    if not wait([self.sentinel], timeout):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.12/multiprocessing/connection.py", line 1136, in wait
+    ready = selector.select(timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.12/selectors.py", line 415, in select
+    fd_event_list = self._selector.poll(timeout)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt:

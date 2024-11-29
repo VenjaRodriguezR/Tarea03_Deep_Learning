@@ -1,0 +1,17 @@
+{"time":"2024-11-29T10:01:17.885787175-03:00","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2024-11-29T10:01:17.885797122-03:00","level":"INFO","msg":"created symlink","path":"/home/josei/workspace/RN/Tarea03_Deep_Learning/wandb/run-20241129_100117-vit47ou4/logs/debug-core.log"}
+{"time":"2024-11-29T10:01:17.987920136-03:00","level":"INFO","msg":"created new stream","id":"vit47ou4"}
+{"time":"2024-11-29T10:01:17.987955816-03:00","level":"INFO","msg":"stream: started","id":"vit47ou4"}
+{"time":"2024-11-29T10:01:17.987966886-03:00","level":"INFO","msg":"writer: Do: started","stream_id":"vit47ou4"}
+{"time":"2024-11-29T10:01:17.98800136-03:00","level":"INFO","msg":"handler: started","stream_id":"vit47ou4"}
+{"time":"2024-11-29T10:01:17.98803416-03:00","level":"INFO","msg":"sender: started","stream_id":"vit47ou4"}
+{"time":"2024-11-29T10:01:23.846395491-03:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-29T10:44:31.220485113-03:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-29T10:44:31.224961926-03:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-29T10:44:32.218227825-03:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading wandb-summary.json","runtime_seconds":0.406196473,"progress":"269B/269B"},{"desc":"saving job artifact","runtime_seconds":0.405732509},{"desc":"uploading config.yaml","runtime_seconds":0.097618072,"progress":"989B/989B"},{"desc":"uploading output.log","runtime_seconds":0.097588725,"progress":"2.3KB/2.3KB"}],"total_operations":4}}
+{"time":"2024-11-29T10:44:33.144069638-03:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-29T10:44:34.9895286-03:00","level":"INFO","msg":"stream: closing","id":"vit47ou4"}
+{"time":"2024-11-29T10:44:34.989553287-03:00","level":"INFO","msg":"handler: closed","stream_id":"vit47ou4"}
+{"time":"2024-11-29T10:44:34.989571818-03:00","level":"INFO","msg":"writer: Close: closed","stream_id":"vit47ou4"}
+{"time":"2024-11-29T10:44:34.989591052-03:00","level":"INFO","msg":"sender: closed","stream_id":"vit47ou4"}
+{"time":"2024-11-29T10:44:34.989632655-03:00","level":"INFO","msg":"stream: closed","id":"vit47ou4"}

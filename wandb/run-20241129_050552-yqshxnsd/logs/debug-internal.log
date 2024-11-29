@@ -1,0 +1,17 @@
+{"time":"2024-11-29T05:05:52.707031631-03:00","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2024-11-29T05:05:52.707038663-03:00","level":"INFO","msg":"created symlink","path":"/home/josei/workspace/RN/Tarea03_Deep_Learning/wandb/run-20241129_050552-yqshxnsd/logs/debug-core.log"}
+{"time":"2024-11-29T05:05:52.808571449-03:00","level":"INFO","msg":"created new stream","id":"yqshxnsd"}
+{"time":"2024-11-29T05:05:52.808610374-03:00","level":"INFO","msg":"stream: started","id":"yqshxnsd"}
+{"time":"2024-11-29T05:05:52.808703044-03:00","level":"INFO","msg":"writer: Do: started","stream_id":"yqshxnsd"}
+{"time":"2024-11-29T05:05:52.808724664-03:00","level":"INFO","msg":"handler: started","stream_id":"yqshxnsd"}
+{"time":"2024-11-29T05:05:52.808706754-03:00","level":"INFO","msg":"sender: started","stream_id":"yqshxnsd"}
+{"time":"2024-11-29T05:05:53.124625498-03:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-29T05:27:32.890602074-03:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-29T05:27:32.891042619-03:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-29T05:27:33.89099879-03:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"saving job artifact","runtime_seconds":0.36839352},{"desc":"uploading wandb-summary.json","runtime_seconds":0.288470691,"progress":"264B/264B"},{"desc":"uploading config.yaml","runtime_seconds":0.076743723,"progress":"976B/976B"},{"desc":"uploading output.log","runtime_seconds":0.076735383,"progress":"2.8KB/2.8KB"}],"total_operations":4}}
+{"time":"2024-11-29T05:27:34.269841481-03:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-29T05:27:35.944867552-03:00","level":"INFO","msg":"stream: closing","id":"yqshxnsd"}
+{"time":"2024-11-29T05:27:35.944882013-03:00","level":"INFO","msg":"handler: closed","stream_id":"yqshxnsd"}
+{"time":"2024-11-29T05:27:35.944895658-03:00","level":"INFO","msg":"writer: Close: closed","stream_id":"yqshxnsd"}
+{"time":"2024-11-29T05:27:35.944959398-03:00","level":"INFO","msg":"sender: closed","stream_id":"yqshxnsd"}
+{"time":"2024-11-29T05:27:35.944970192-03:00","level":"INFO","msg":"stream: closed","id":"yqshxnsd"}

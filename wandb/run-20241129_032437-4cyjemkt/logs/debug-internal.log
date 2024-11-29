@@ -1,0 +1,17 @@
+{"time":"2024-11-29T03:24:37.843124171-03:00","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2024-11-29T03:24:37.843141382-03:00","level":"INFO","msg":"created symlink","path":"/home/josei/workspace/RN/Tarea03_Deep_Learning/wandb/run-20241129_032437-4cyjemkt/logs/debug-core.log"}
+{"time":"2024-11-29T03:24:37.945645564-03:00","level":"INFO","msg":"created new stream","id":"4cyjemkt"}
+{"time":"2024-11-29T03:24:37.945665263-03:00","level":"INFO","msg":"stream: started","id":"4cyjemkt"}
+{"time":"2024-11-29T03:24:37.94571033-03:00","level":"INFO","msg":"writer: Do: started","stream_id":"4cyjemkt"}
+{"time":"2024-11-29T03:24:37.945799003-03:00","level":"INFO","msg":"handler: started","stream_id":"4cyjemkt"}
+{"time":"2024-11-29T03:24:37.945826603-03:00","level":"INFO","msg":"sender: started","stream_id":"4cyjemkt"}
+{"time":"2024-11-29T03:24:38.299063656-03:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-29T03:43:59.956383576-03:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-29T03:43:59.957146626-03:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-29T03:44:00.919398578-03:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading wandb-summary.json","runtime_seconds":0.389735239,"progress":"267B/267B"},{"desc":"saving job artifact","runtime_seconds":0.383384872},{"desc":"uploading config.yaml","runtime_seconds":0.082836729,"progress":"977B/977B"},{"desc":"uploading output.log","runtime_seconds":0.082816926,"progress":"2.3KB/2.3KB"}],"total_operations":4}}
+{"time":"2024-11-29T03:44:01.315571782-03:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-29T03:44:03.280105919-03:00","level":"INFO","msg":"stream: closing","id":"4cyjemkt"}
+{"time":"2024-11-29T03:44:03.280119768-03:00","level":"INFO","msg":"handler: closed","stream_id":"4cyjemkt"}
+{"time":"2024-11-29T03:44:03.28012789-03:00","level":"INFO","msg":"writer: Close: closed","stream_id":"4cyjemkt"}
+{"time":"2024-11-29T03:44:03.280153091-03:00","level":"INFO","msg":"sender: closed","stream_id":"4cyjemkt"}
+{"time":"2024-11-29T03:44:03.280192136-03:00","level":"INFO","msg":"stream: closed","id":"4cyjemkt"}

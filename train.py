@@ -11,25 +11,29 @@ import os
 import timm
 from transforms import transforming
 import json
+from utils import generate_architecture_name
+from torchvision.datasets import ImageFolder
+
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 def train_model(
-    train_data,
-    val_data,
-    model,
-    architecture_name,  # Nombre de la arquitectura
-    training_params,
-    num_classes,
-    criterion = nn.CrossEntropyLoss(),
-):  
+    train_data: ImageFolder,
+    val_data: ImageFolder,
+    model: timm.models,
+    architecture_name: str,  # Nombre de la arquitectura
+    training_params: dict,
+    num_classes: int,
+    criterion: torch.nn.modules.loss = nn.CrossEntropyLoss(),
+) -> tuple:  
+    
     print(f"Using device: {device}")
     # Inicializa un experimento único en wandb
     torch.cuda.empty_cache()
 
     wandb.init(
         project = "Tarea03_Deep_Learning",
-        name=f"{architecture_name}-experiment",  # Nombre del experimento
+        name = f"{architecture_name}-experiment",  # Nombre del experimento
         tags = [architecture_name, "multiclass", "pretrained"],
         config = {
             "architecture": architecture_name,
@@ -73,7 +77,7 @@ def train_model(
     train_metric = torchmetrics.Accuracy(task = "multiclass", num_classes = num_classes).to(device)
     val_metric = torchmetrics.Accuracy(task = "multiclass", num_classes = num_classes).to(device)
 
-    early_stopping_patience = 10
+    early_stopping_patience = 6
     best_val_loss = float("inf")
     patience_counter = 0
 
@@ -163,7 +167,7 @@ def train_model(
 
         # Early stopping
         if patience_counter >= early_stopping_patience:
-            print(f'Early stopping triggered at epoch {e-9}. Best Validation Loss: {best_val_loss:.4f}')
+            print(f'Early stopping triggered at epoch {e-5}. Best Validation Loss: {best_val_loss:.4f}')
             break
 
     wandb.finish()
@@ -173,7 +177,7 @@ def train_model(
 ##########################################################################################################
 ## We are gonna take a feature extraction approach
 class FrozenNet(nn.Module):
-    def __init__(self, num_classes = 47, frozen = False, type = "efficientnetv2_rw_m" ):
+    def __init__(self, num_classes: int = 47, frozen: bool = True, type: str = "efficientnet_b5.sw_in12k" ):
         
         super().__init__()
         self.num_classes = num_classes
@@ -185,8 +189,17 @@ class FrozenNet(nn.Module):
                 param.requires_grad = False
 
         self.fc_layers = nn.Sequential(
-            nn.LazyLinear(512), #el tamaño de entrada se determina automáticamente
-            nn.Linear(512, self.num_classes)
+            nn.LazyLinear(512),          # Primera capa totalmente conectada
+            nn.BatchNorm1d(512),         # Normalización por lotes para la salida de la capa
+            nn.ReLU(),                   # Activación no lineal
+            nn.Dropout(0.3),             # Dropout para prevenir el sobreajuste
+
+            nn.Linear(512, 256),         # Segunda capa totalmente conectada más pequeña
+            nn.BatchNorm1d(256),         # Normalización por lotes
+            nn.ReLU(),                   # Activación no lineal
+            nn.Dropout(0.3),             # Dropout adicional para regularizar
+
+            nn.Linear(256, self.num_classes)  # Capa final de salida
         )
 
     def forward(self, x):
@@ -196,7 +209,7 @@ class FrozenNet(nn.Module):
     
 
 ##############################################################################################################
-def testing(model_input, data_eva, training_params):
+def testing(model_input: timm.models, data_eva: ImageFolder, training_params: dict):
     # Cambiar el modelo al modo de evaluación
     model_input.eval()
 
@@ -220,10 +233,10 @@ def testing(model_input, data_eva, training_params):
             # Convertir las predicciones a clases con la probabilidad máxima
             preds = torch.argmax(output, dim = 1)
 
-            # Actualizar el cálculo del F1-score
+            # Actualizar el cálculo del la accuracy
             acc_metric.update(preds, target)
 
-    # Calcular el F1-score final
+    # Calcular la accuracy final
     acc_score = acc_metric.compute().item()
 
     print(f'Test Accuracy: {acc_score:.5f}')
@@ -231,7 +244,7 @@ def testing(model_input, data_eva, training_params):
     return acc_score
 
 ####################################################################################33
-def save_results_to_json(result_file, results):
+def save_results_to_json(result_file: str, results: dict) -> None:
     """
     Guarda los resultados en un archivo JSON, asegurando que los datos sean serializables.
     """
@@ -239,7 +252,7 @@ def save_results_to_json(result_file, results):
         # Crear directorio si no existe
         directory = os.path.dirname(result_file)
         if directory:  # Solo crea el directorio si no es vacío
-            os.makedirs(directory, exist_ok=True)
+            os.makedirs(directory, exist_ok = True)
 
         # Convertir todos los valores problemáticos a tipos serializables
         results_serializable = {
@@ -270,44 +283,80 @@ def save_results_to_json(result_file, results):
 
 ########################################################################################
 def run_experiment(
-    selected_transforms,
-    architecture_name,
-    model_type="efficientnetv2_rw_m",
-    num_classes=47,
-    training_params=None,
-    frozen=True,
-    result_file="results/efficient_net.json"
+    selected_transforms: list,
+    model_name: str,
+    base_name: str = "experiment",
+    extra_info: str = None,
+    model_type: str = "efficientnetv2_rw_m",
+    num_classes: int = 47,
+    training_params: dict = None,
+    frozen: bool = True,
+    result_file :str = "results/efficient_net.json",
+    normalize:bool = True,
+    use_float:bool = False,
+    resize_size: int = 256  # Tamaño de `resize` configurable
 ):
+    """
+    Ejecuta un experimento completo: entrenamiento, validación y prueba.
+
+    Args:
+        selected_transforms (list): Transformaciones a aplicar.
+        model_name (str): Nombre del modelo base.
+        base_name (str): Nombre base para nombrar el experimento.
+        extra_info (str): Información extra para el nombre del experimento.
+        model_type (str): Tipo de modelo preentrenado.
+        num_classes (int): Número de clases en la tarea.
+        training_params (dict): Parámetros de entrenamiento.
+        frozen (bool): Si los pesos del modelo deben ser congelados.
+        result_file (str): Archivo para guardar los resultados.
+        normalize (bool): Si se normalizan los datos.
+        use_float (bool): Si se convierten a flotantes los datos.
+        resize_size (int): Tamaño del `resize`.
+
+    Returns:
+        None
+    """
     if training_params is None:
         training_params = {"learning_rate": 3e-4, "batch_size": 32, "num_epochs": 50}
 
-    # Transformar los datos
-    train_data, val_data, test_data = transforming(selected_transforms)
+    # Generar nombre de la arquitectura
+    architecture_name = generate_architecture_name(model_name, base_name, extra_info)
+    print(f"Running experiment: {architecture_name}")
+
+    # Preparar datos
+    train_data, val_data = transforming(
+        selected_transforms = selected_transforms,
+        resize_size = resize_size,
+        normalize = normalize,
+        use_float = use_float
+    )
 
     # Crear el modelo
-    model = FrozenNet(num_classes=num_classes, frozen=frozen, type=model_type)
+    model = FrozenNet(num_classes = num_classes, frozen = frozen, type = model_type)
 
     try:
         # Entrenar el modelo
         trained_model, train_loss, val_loss, val_acc_history = train_model(
             train_data,
             val_data,
-            model=model,
-            architecture_name=architecture_name,
-            training_params=training_params,
-            num_classes=num_classes,
+            model = model,
+            architecture_name = architecture_name,
+            training_params = training_params,
+            num_classes = num_classes,
         )
 
         # Evaluación en conjunto de prueba
-        print("\n=== Evaluación en el conjunto de prueba ===")
-        test_accuracy = testing(trained_model, test_data, training_params=training_params)
+        # print("\n=== Evaluación en el conjunto de prueba ===")
+        # test_accuracy = testing(trained_model, test_data, training_params = training_params)
 
         # Calcular métricas relevantes
         best_epoch = int(np.argmin(val_loss) + 1) if val_loss else -1
         best_val_loss = float(val_loss[best_epoch - 1]) if val_loss else None
         best_train_loss = float(train_loss[best_epoch - 1]) if train_loss else None
         max_val_acc = max(val_acc_history)
-
+        
+        test_accuracy = 0
+        
         # Preparar resultados
         results = {
             "architecture": architecture_name,
@@ -321,6 +370,7 @@ def run_experiment(
         }
 
         # Guardar resultados
+        print("Results to save:", results)
         save_results_to_json(result_file, results)
 
     except Exception as e:
@@ -328,8 +378,11 @@ def run_experiment(
 
     print(f"Experimento terminado para {architecture_name}")
 
+
+
 ################################################################################
-def automate_training(model_names, selected_transforms, num_classes, training_params, frozen=True, result_file="efficient_net.json"):
+def automate_training(model_names: list, selected_transforms: list, num_classes: int, 
+                      training_params: dict, frozen: bool = True, result_file: str = "efficient_net.json"):
     """
     Automate training for a list of model names from timm.
     
@@ -343,22 +396,59 @@ def automate_training(model_names, selected_transforms, num_classes, training_pa
     """
     for model_name in model_names:
         # Generate architecture_name dynamically
-        architecture_name = f"{model_name}_4_augmented"
+        architecture_name = f"{model_name}_4_augmented_original_network_aug"
         
         print(f"Starting training for model: {model_name} with architecture_name: {architecture_name}")
         
         try:
             # Run the experiment
             run_experiment(
-                selected_transforms=selected_transforms,
-                architecture_name=architecture_name,
-                model_type=model_name,
-                num_classes=num_classes,
-                training_params=training_params,
-                frozen=frozen,
-                result_file=result_file,  # Pasar el archivo de resultados
+                selected_transforms = selected_transforms,
+                architecture_name = architecture_name,
+                model_type = model_name,
+                num_classes = num_classes,
+                training_params = training_params,
+                frozen = frozen,
+                result_file = result_file,  # Pasar el archivo de resultados
             )
         except Exception as e:
             print(f"Error occurred while training model {model_name}: {e}")
         print(f"Finished training for model: {model_name}\n")
+
+###################################################################################################################
+import json
+
+def find_best_model(file_path: str, criterion: str = "max_val_acc"):
+    """
+    Encuentra el mejor modelo según el criterio proporcionado.
+
+    Args:
+        file_path (str): Ruta al archivo JSON con los resultados.
+        criterion (str): Criterio para filtrar el mejor modelo. Puede ser:
+                         - "max_val_acc" para el mayor accuracy de validación.
+                         - "test_accuracy" para el mayor accuracy de prueba.
+                         - "best_val_loss" para la menor pérdida de validación.
+
+    Returns:
+        dict: Datos del mejor modelo según el criterio.
+    """
+    # Leer el archivo JSON
+    with open(file_path, "r") as f:
+        data = json.load(f)
+
+    # Verificar que el criterio es válido
+    valid_criteria = ["max_val_acc", "test_accuracy", "best_val_loss"]
+    if criterion not in valid_criteria:
+        raise ValueError(f"Criterio no válido. Usa uno de: {valid_criteria}")
+
+    # Determinar el mejor modelo
+    if criterion == "best_val_loss":
+        best_model = min(data, key = lambda x: x[criterion])
+    else:
+        best_model = max(data, key = lambda x: x[criterion])
+
+    return best_model
+
+
+
 

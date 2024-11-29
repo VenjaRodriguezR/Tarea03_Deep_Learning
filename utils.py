@@ -6,27 +6,35 @@ from collections import defaultdict
 import os
 from mpl_toolkits.axes_grid1 import ImageGrid
 from PIL import Image
+from torchvision.datasets import ImageFolder
 
 SEED = 0
 
 # Plots training curves
-def plot_training_curves(train_loss, validation_loss, n_epochs, title = ""):
+def plot_training_curves(train_loss: list, validation_loss: list, n_epochs: int, title: str = "") -> None:
+
     plt.plot(range(1, n_epochs + 1), train_loss, label = "Train Loss")
     plt.plot(range(1, n_epochs + 1), validation_loss, label = "Validation Loss")
     plt.title(title)
     plt.legend()
     plt.show()
 
+#############################################################################
+
 # It lets you see the images from its numeric representation
-def plot_images(idx, data):
-    plt.imshow(data[idx][0].permute(1, 2, 0))
+def plot_images(idx: int, data: ImageFolder) -> None:
+
+    plt.imshow(data[idx][0].permute(1, 2, 0)) # (H, W, C)
     class_label = data[idx][1]
     plt.title(data.classes[class_label])
     plt.axis("off")
     print(data[idx][0].shape)
 
+#############################################################################
+
 # SEETS SEED FOR REPRODUCIBILITY
-def set_seed(seed = SEED):
+def set_seed(seed: int = SEED) -> None:
+
     torch.backends.cudnn.deterministic = True
     torch.backends.cudnn.benchmark = False
     torch.manual_seed(seed)
@@ -34,26 +42,35 @@ def set_seed(seed = SEED):
     np.random.seed(seed)
     random.seed(seed)
 
+#############################################################################
 # COUNTS INSTANCES OF PLANT IMAGES BY CLASS
-def count_instances_per_class(image_folder):
+
+def count_instances_per_class(image_folder: ImageFolder) -> defaultdict:
+
     class_counts = defaultdict(int)
+
     for _, class_idx in image_folder.samples:
         class_counts[image_folder.classes[class_idx]] += 1
     return class_counts
 
-
+#############################################################################
 # OBTAINS IMAGES WITH AN SPECIFIC FORMAT
-def get_images_by_format(base_dir, target_extension=".gif"):
+
+def get_images_by_format(base_dir: str, target_extension = ".gif") -> list:
+
     images_by_format = []
+
     for root, dirs, files in os.walk(base_dir):
         for file in files:
             if file.lower().endswith(target_extension):
                 img_path = os.path.join(root, file)
                 images_by_format.append(img_path)
+
     return images_by_format
 
+#############################################################################
 
-def plot_images_for_class(class_name, base_path, n = 10, figsize = (10, 10)):
+def plot_images_for_class(class_name: str, base_path: str, n: int = 10, figsize: tuple = (10, 10)) -> None:
     """
     Genera un gráfico con imágenes de una clase específica.
 
@@ -73,29 +90,34 @@ def plot_images_for_class(class_name, base_path, n = 10, figsize = (10, 10)):
 
     # Listar imágenes de la clase
     images = [os.path.join(class_path, img) for img in os.listdir(class_path) 
-              if img.lower().endswith(('jpg', 'png', 'jpeg'))]
+              if img.lower().endswith(('jpg', 'png', 'jpeg', "gif", "jpe", "webp", "jfif"))]
     
     if len(images) == 0:
         print(f"No se encontraron imágenes para la clase '{class_name}'.")
         return
     
     # Tomar las primeras `n` imágenes
-    images = images[:n]
+    images = images[ : n]
 
     # Crear la figura y el grid
-    fig = plt.figure(figsize=figsize)
-    grid = ImageGrid(fig, 111, nrows_ncols=(1, len(images)), axes_pad=0.4)
+    fig = plt.figure(figsize = figsize)
+
+    grid = ImageGrid(fig, 111, nrows_ncols = (1, len(images)), axes_pad = 0.4)
 
     # Añadir imágenes al grid
+
     for img_path, ax in zip(images, grid):
         ax.axis('off')  # Quitar los ejes
         img = Image.open(img_path)
         ax.imshow(img)
+    
 
     plt.show()
 
+#############################################################################
+
 # Función para mostrar imágenes de todas las clases
-def plot_images_for_all_classes(base_path, n=5, figsize=(10, 10)):
+def plot_images_for_all_classes(base_path: str, n: int = 5, figsize: tuple = (10, 10)) -> None:
     """
     Genera gráficos con imágenes de todas las clases en un dataset.
 
@@ -109,8 +131,9 @@ def plot_images_for_all_classes(base_path, n=5, figsize=(10, 10)):
 
     for class_name in classes:
         print(f"Mostrando imágenes para la clase: {class_name}")
-        plot_images_for_class(class_name, base_path, n=n, figsize=figsize)
+        plot_images_for_class(class_name, base_path, n = n, figsize = figsize)
 
+#############################################################################
 
 def count_images_by_size(base_dir = "house_plant_species/train"):
 
@@ -133,3 +156,23 @@ def count_images_by_size(base_dir = "house_plant_species/train"):
                 extensions[ext.lower()] += 1
 
     return size_count, extensions
+
+#############################################################################
+
+# Automatización del nombre de la arquitectura
+def generate_architecture_name(model_name: str, base_name: str = "augmented", extra_info: str = None) -> str:
+    """
+    Genera un nombre de arquitectura dinámico basado en el modelo, un nombre base y opcionalmente información extra.
+    Este nombre aparecerá en Wanb y en el nombre de la carpeta en checkpoints
+
+    Args:
+        model_name (string): The name you will give your model
+        base_name (string): Extension of model_name
+        extra_info (string): Extension of model_name
+
+    Returns:
+        String: f"{model_name}_{base_name}"
+    """
+    if extra_info:
+        return f"{model_name}_{base_name}_{extra_info}"
+    return f"{model_name}_{base_name}"
