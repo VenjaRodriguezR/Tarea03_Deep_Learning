@@ -1,0 +1,30 @@
+[
+    {
+        "architecture": "efficientnet_b0.ra4_e3600_r224_in1k_4_augmented",
+        "model_type": "efficientnet_b0.ra4_e3600_r224_in1k",
+        "best_epoch": 8,
+        "best_val_loss": 1.014615559923476,
+        "best_train_loss": 0.7436223780438744,
+        "max_val_acc": 0.7364093065261841,
+        "test_accuracy": 0.7349177598953247,
+        "training_params": {
+            "learning_rate": 0.0003,
+            "batch_size": 32,
+            "num_epochs": 50
+        }
+    },
+    {
+        "architecture": "efficientnet_b0.ra_in1k_4_augmented",
+        "model_type": "efficientnet_b0.ra_in1k",
+        "best_epoch": 8,
+        "best_val_loss": 0.6724263852921085,
+        "best_train_loss": 0.4918930918066459,
+        "max_val_acc": 0.8113293647766113,
+        "test_accuracy": 0.8153564929962158,
+        "training_params": {
+            "learning_rate": 0.0003,
+            "batch_size": 32,
+            "num_epochs": 50
+        }
+    }
+]

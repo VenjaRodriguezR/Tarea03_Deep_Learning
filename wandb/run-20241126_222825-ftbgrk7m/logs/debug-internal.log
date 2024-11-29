@@ -1,7 +1,0 @@
-{"time":"2024-11-26T22:28:25.965386929-03:00","level":"INFO","msg":"using version","core version":"0.18.7"}
-{"time":"2024-11-26T22:28:25.965396165-03:00","level":"INFO","msg":"created symlink","path":"/home/notvenja24/Descargas/Deep Learning/Tarea03_Deep_learning/wandb/run-20241126_222825-ftbgrk7m/logs/debug-core.log"}
-{"time":"2024-11-26T22:28:26.071743094-03:00","level":"INFO","msg":"created new stream","id":"ftbgrk7m"}
-{"time":"2024-11-26T22:28:26.071766628-03:00","level":"INFO","msg":"stream: started","id":"ftbgrk7m"}
-{"time":"2024-11-26T22:28:26.071866941-03:00","level":"INFO","msg":"writer: Do: started","stream_id":"ftbgrk7m"}
-{"time":"2024-11-26T22:28:26.071894807-03:00","level":"INFO","msg":"sender: started","stream_id":"ftbgrk7m"}
-{"time":"2024-11-26T22:28:26.071910738-03:00","level":"INFO","msg":"handler: started","stream_id":"ftbgrk7m"}

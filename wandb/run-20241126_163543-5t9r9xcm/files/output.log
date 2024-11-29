@@ -1,8 +1,0 @@
-Epoch: 1/10 - Time: 118.01s - Train Loss: 1.4298, Train F1: 0.6257 - Validation Loss: 0.7754, Validation F1: 0.7829
-Epoch: 2/10 - Time: 120.29s - Train Loss: 0.4092, Train F1: 0.8815 - Validation Loss: 0.5201, Validation F1: 0.8480
-Epoch: 3/10 - Time: 111.37s - Train Loss: 0.2192, Train F1: 0.9341 - Validation Loss: 0.6428, Validation F1: 0.8235
-Epoch: 4/10 - Time: 106.52s - Train Loss: 0.1516, Train F1: 0.9527 - Validation Loss: 0.5269, Validation F1: 0.8542
-Epoch: 5/10 - Time: 114.09s - Train Loss: 0.0946, Train F1: 0.9719 - Validation Loss: 0.6226, Validation F1: 0.8432
-Epoch: 6/10 - Time: 106.09s - Train Loss: 0.0863, Train F1: 0.9735 - Validation Loss: 0.6398, Validation F1: 0.8417
-Epoch: 7/10 - Time: 103.61s - Train Loss: 0.0684, Train F1: 0.9769 - Validation Loss: 0.4711, Validation F1: 0.8805
-Epoch: 8/10 - Time: 103.00s - Train Loss: 0.0577, Train F1: 0.9828 - Validation Loss: 0.5660, Validation F1: 0.8553

@@ -2,3 +2,5 @@
 venv/
 house_plant_species/
 *.zip
+checkpoints/
+wandb/

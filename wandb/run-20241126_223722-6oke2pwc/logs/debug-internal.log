@@ -1,8 +1,0 @@
-{"time":"2024-11-26T22:37:22.636463883-03:00","level":"INFO","msg":"using version","core version":"0.18.7"}
-{"time":"2024-11-26T22:37:22.63647985-03:00","level":"INFO","msg":"created symlink","path":"/home/notvenja24/Descargas/Deep Learning/Tarea03_Deep_learning/wandb/run-20241126_223722-6oke2pwc/logs/debug-core.log"}
-{"time":"2024-11-26T22:37:22.740048112-03:00","level":"INFO","msg":"created new stream","id":"6oke2pwc"}
-{"time":"2024-11-26T22:37:22.740069382-03:00","level":"INFO","msg":"stream: started","id":"6oke2pwc"}
-{"time":"2024-11-26T22:37:22.740094269-03:00","level":"INFO","msg":"handler: started","stream_id":"6oke2pwc"}
-{"time":"2024-11-26T22:37:22.740266794-03:00","level":"INFO","msg":"writer: Do: started","stream_id":"6oke2pwc"}
-{"time":"2024-11-26T22:37:22.74032862-03:00","level":"INFO","msg":"sender: started","stream_id":"6oke2pwc"}
-{"time":"2024-11-26T22:37:23.116659226-03:00","level":"INFO","msg":"Starting system monitor"}

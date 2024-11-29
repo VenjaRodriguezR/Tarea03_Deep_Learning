@@ -2,33 +2,30 @@ import matplotlib.pyplot as plt
 import torch
 import numpy as np
 import random
+from collections import defaultdict
+import os
+from mpl_toolkits.axes_grid1 import ImageGrid
+from PIL import Image
 
 SEED = 0
 
-def plot_number(idx, data):
-
-    plt.imshow(data[idx]["X"].numpy().reshape(28, 28), cmap = "gray")
-    plt.title(f"Etiqueta: {data[idx]['y']}")
-    plt.show()
-
-
+# Plots training curves
 def plot_training_curves(train_loss, validation_loss, n_epochs, title = ""):
-
     plt.plot(range(1, n_epochs + 1), train_loss, label = "Train Loss")
     plt.plot(range(1, n_epochs + 1), validation_loss, label = "Validation Loss")
     plt.title(title)
     plt.legend()
     plt.show()
 
-## Es importante cambiar el orden de los canales para poder mostrar la imagen...
+# It lets you see the images from its numeric representation
 def plot_images(idx, data):
-    
     plt.imshow(data[idx][0].permute(1, 2, 0))
     class_label = data[idx][1]
     plt.title(data.classes[class_label])
     plt.axis("off")
     print(data[idx][0].shape)
 
+# SEETS SEED FOR REPRODUCIBILITY
 def set_seed(seed = SEED):
     torch.backends.cudnn.deterministic = True
     torch.backends.cudnn.benchmark = False
@@ -36,3 +33,103 @@ def set_seed(seed = SEED):
     torch.cuda.manual_seed_all(seed)
     np.random.seed(seed)
     random.seed(seed)
+
+# COUNTS INSTANCES OF PLANT IMAGES BY CLASS
+def count_instances_per_class(image_folder):
+    class_counts = defaultdict(int)
+    for _, class_idx in image_folder.samples:
+        class_counts[image_folder.classes[class_idx]] += 1
+    return class_counts
+
+
+# OBTAINS IMAGES WITH AN SPECIFIC FORMAT
+def get_images_by_format(base_dir, target_extension=".gif"):
+    images_by_format = []
+    for root, dirs, files in os.walk(base_dir):
+        for file in files:
+            if file.lower().endswith(target_extension):
+                img_path = os.path.join(root, file)
+                images_by_format.append(img_path)
+    return images_by_format
+
+
+def plot_images_for_class(class_name, base_path, n = 10, figsize = (10, 10)):
+    """
+    Genera un gráfico con imágenes de una clase específica.
+
+    Parameters:
+    - class_name (str): Nombre de la clase que deseas graficar.
+    - base_path (str): Ruta base donde están las carpetas de las clases.
+    - n (int): Número máximo de imágenes a mostrar.
+    - figsize (tuple): Tamaño del gráfico.
+    """
+    # Ruta completa de la clase
+    class_path = os.path.join(base_path, class_name)
+
+    # Verificar que la ruta exista
+    if not os.path.exists(class_path):
+        print(f"La clase '{class_name}' no existe en la ruta '{base_path}'.")
+        return
+
+    # Listar imágenes de la clase
+    images = [os.path.join(class_path, img) for img in os.listdir(class_path) 
+              if img.lower().endswith(('jpg', 'png', 'jpeg'))]
+    
+    if len(images) == 0:
+        print(f"No se encontraron imágenes para la clase '{class_name}'.")
+        return
+    
+    # Tomar las primeras `n` imágenes
+    images = images[:n]
+
+    # Crear la figura y el grid
+    fig = plt.figure(figsize=figsize)
+    grid = ImageGrid(fig, 111, nrows_ncols=(1, len(images)), axes_pad=0.4)
+
+    # Añadir imágenes al grid
+    for img_path, ax in zip(images, grid):
+        ax.axis('off')  # Quitar los ejes
+        img = Image.open(img_path)
+        ax.imshow(img)
+
+    plt.show()
+
+# Función para mostrar imágenes de todas las clases
+def plot_images_for_all_classes(base_path, n=5, figsize=(10, 10)):
+    """
+    Genera gráficos con imágenes de todas las clases en un dataset.
+
+    Parameters:
+    - base_path (str): Ruta base donde están las carpetas de las clases.
+    - n (int): Número máximo de imágenes a mostrar por clase.
+    - figsize (tuple): Tamaño del gráfico para cada clase.
+    """
+    # Listar carpetas (clases) en la ruta base
+    classes = [d for d in os.listdir(base_path) if os.path.isdir(os.path.join(base_path, d))]
+
+    for class_name in classes:
+        print(f"Mostrando imágenes para la clase: {class_name}")
+        plot_images_for_class(class_name, base_path, n=n, figsize=figsize)
+
+
+def count_images_by_size(base_dir = "house_plant_species/train"):
+
+    size_count = defaultdict(int)
+    extensions = defaultdict(int)
+
+    for root, dirs, files in os.walk(base_dir):
+        for file in files:
+            if file.endswith(('.png', '.jpg', '.jpeg')):
+                img_path = os.path.join(root, file)
+                try:
+                    with Image.open(img_path) as img:
+                        size = img.size  # (width, height)
+                        size_count[size] += 1
+                except Exception as e:
+                    print(f"Error procesando {img_path}: {e}")
+            
+            _, ext = os.path.splitext(file)
+            if ext:
+                extensions[ext.lower()] += 1
+
+    return size_count, extensions
