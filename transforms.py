@@ -2,7 +2,6 @@ import albumentations as A
 from albumentations.pytorch import ToTensorV2
 from torchvision.datasets import ImageFolder
 import numpy as np
-from torch.utils.data import random_split
 from PIL import Image
 
 class Transforms:
@@ -38,18 +37,24 @@ class Transforms:
 # IT SEEMS IT CHANGES THE TYPE OF DATA, USE A.ToFloat() instead
 
 TRANSFORMATIONS_DIC = {
-    "random_rotate": A.RandomRotate90(p = 0.5),
+    "random_rotate": A.Rotate(limit = (-15, 15)),
     "horizontal_flip": A.HorizontalFlip(p = 0.5),
+    "advanced_blur": A.AdvancedBlur(p = 0.5),
+    "perspective": A.Perspective(p = 0.5),
+    "clahe": A.CLAHE(p = 0.5),
+    "random_border_crop": A.RandomCropFromBorders(p = 0.5),
+    "fancy_pca": A.FancyPCA(p = 0.5),
     "brightness_contrast": A.RandomBrightnessContrast(p = 0.2),
     "shift_scale_rotate": A.ShiftScaleRotate(shift_limit = 0.05, scale_limit = 0.05, rotate_limit = 15, p = 0.5),
     "blur": A.GaussianBlur(blur_limit = (3, 7), p = 0.2),
     "noise": A.GaussNoise(p = 0.2),
     "perspective": A.Perspective(scale = (0.05, 0.1), p = 0.3),
     "random_crop": A.RandomCrop(224, 224, p = 1.0),
-    "color_jitter": A.ColorJitter(brightness = 0.2, contrast = 0.2, saturation = 0.2, hue = 0.1, p = 0.5),
-    "center_crop": A.CenterCrop(416, 416),
-    "normalize": A.Normalize(mean = (0.485, 0.456, 0.406), std = (0.229, 0.224, 0.225), max_pixel_value = 255.0, p =1.0),
-    "resize": lambda size: A.Resize(size, size)
+    "color_jitter": A.ColorJitter(brightness = 0.4, contrast = 0.4, saturation = 0.3, hue = 0.2, p = 0.7),
+    "center_crop": A.CenterCrop(384, 384),
+    "normalize": A.Normalize(mean = (0.485, 0.456, 0.406), std = (0.229, 0.224, 0.225), max_pixel_value = 255.0, p = 1.0),
+    "resize": lambda size: A.Resize(size, size),
+    "vertical": A.VerticalFlip(p = 0.5)
 }
 
 #########################################################################################

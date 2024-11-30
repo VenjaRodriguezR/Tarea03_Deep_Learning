@@ -1,0 +1,22 @@
+ 24%|██▍       | 12/50 [1:03:46<3:21:58, 318.91s/it]
+Epoch: 1/50 - Time: 270.17s - Train Loss: 1.5993, Train Accuracy: 0.7130 - Validation Loss: 0.5326, Validation Accuracy: 0.9090
+Model checkpoint saved at epoch 1
+Epoch: 2/50 - Time: 307.72s - Train Loss: 0.5500, Train Accuracy: 0.8915 - Validation Loss: 0.3111, Validation Accuracy: 0.9254
+Model checkpoint saved at epoch 2
+Epoch: 3/50 - Time: 300.50s - Train Loss: 0.3606, Train Accuracy: 0.9187 - Validation Loss: 0.2555, Validation Accuracy: 0.9360
+Model checkpoint saved at epoch 3
+Epoch: 4/50 - Time: 304.47s - Train Loss: 0.2803, Train Accuracy: 0.9332 - Validation Loss: 0.2313, Validation Accuracy: 0.9386
+Model checkpoint saved at epoch 4
+Epoch: 5/50 - Time: 301.62s - Train Loss: 0.2455, Train Accuracy: 0.9370 - Validation Loss: 0.2062, Validation Accuracy: 0.9481
+Model checkpoint saved at epoch 5
+Epoch: 6/50 - Time: 304.13s - Train Loss: 0.2216, Train Accuracy: 0.9407 - Validation Loss: 0.1977, Validation Accuracy: 0.9452
+Model checkpoint saved at epoch 6
+Epoch: 7/50 - Time: 301.15s - Train Loss: 0.1942, Train Accuracy: 0.9452 - Validation Loss: 0.1910, Validation Accuracy: 0.9481
+Model checkpoint saved at epoch 7
+Epoch: 8/50 - Time: 320.29s - Train Loss: 0.1807, Train Accuracy: 0.9516 - Validation Loss: 0.2078, Validation Accuracy: 0.9433
+Epoch: 9/50 - Time: 297.01s - Train Loss: 0.1571, Train Accuracy: 0.9545 - Validation Loss: 0.2004, Validation Accuracy: 0.9466
+Epoch: 10/50 - Time: 282.10s - Train Loss: 0.1524, Train Accuracy: 0.9553 - Validation Loss: 0.2105, Validation Accuracy: 0.9423
+Epoch: 11/50 - Time: 274.27s - Train Loss: 0.1510, Train Accuracy: 0.9570 - Validation Loss: 0.2042, Validation Accuracy: 0.9433
+Epoch: 12/50 - Time: 279.88s - Train Loss: 0.1435, Train Accuracy: 0.9568 - Validation Loss: 0.2127, Validation Accuracy: 0.9426
+Epoch: 13/50 - Time: 282.30s - Train Loss: 0.1309, Train Accuracy: 0.9621 - Validation Loss: 0.1957, Validation Accuracy: 0.9485
+Early stopping triggered at epoch 7. Best Validation Loss: 0.1910

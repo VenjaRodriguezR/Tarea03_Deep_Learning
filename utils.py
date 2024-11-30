@@ -8,6 +8,7 @@ from mpl_toolkits.axes_grid1 import ImageGrid
 from PIL import Image
 from torchvision.datasets import ImageFolder
 
+
 SEED = 0
 
 # Plots training curves
@@ -176,3 +177,32 @@ def generate_architecture_name(model_name: str, base_name: str = "augmented", ex
     if extra_info:
         return f"{model_name}_{base_name}_{extra_info}"
     return f"{model_name}_{base_name}"
+
+#############################################################################
+
+def visualize_transformed_images(dataset: ImageFolder, num_images: int = 5, figsize: tuple = (15, 15)) -> None:
+    """
+    Visualiza imágenes transformadas del dataset.
+
+    Args:
+        dataset: Dataset transformado (por ejemplo, de `ImageFolder`).
+        num_images (int): Número de imágenes a visualizar.
+        figsize (tuple): Tamaño del gráfico.
+    """
+    # Seleccionar imágenes aleatorias
+    indices = random.sample(range(len(dataset)), num_images)
+
+    # Crear figura
+    fig, axes = plt.subplots(1, num_images, figsize = figsize)
+
+    for ax, idx in zip(axes, indices):
+        img, label = dataset[idx]
+        # Convertir el tensor a numpy para mostrarlo con matplotlib
+        img = img.permute(1, 2, 0).numpy()
+        # Mostrar imagen
+        ax.imshow(img)
+        ax.axis('off')
+        ax.set_title(f"Class: {dataset.classes[label]}")
+
+    plt.tight_layout()
+    plt.show()

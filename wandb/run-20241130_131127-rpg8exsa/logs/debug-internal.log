@@ -1,0 +1,17 @@
+{"time":"2024-11-30T13:11:27.578554987-03:00","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2024-11-30T13:11:27.578568744-03:00","level":"INFO","msg":"created symlink","path":"/home/josei/workspace/RN/Tarea03_Deep_Learning/wandb/run-20241130_131127-rpg8exsa/logs/debug-core.log"}
+{"time":"2024-11-30T13:11:27.680808317-03:00","level":"INFO","msg":"created new stream","id":"rpg8exsa"}
+{"time":"2024-11-30T13:11:27.680832939-03:00","level":"INFO","msg":"stream: started","id":"rpg8exsa"}
+{"time":"2024-11-30T13:11:27.680979003-03:00","level":"INFO","msg":"writer: Do: started","stream_id":"rpg8exsa"}
+{"time":"2024-11-30T13:11:27.681040941-03:00","level":"INFO","msg":"handler: started","stream_id":"rpg8exsa"}
+{"time":"2024-11-30T13:11:27.681025306-03:00","level":"INFO","msg":"sender: started","stream_id":"rpg8exsa"}
+{"time":"2024-11-30T13:11:28.400209498-03:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-30T13:46:52.726683043-03:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-30T13:46:52.735377106-03:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-30T13:46:53.687350896-03:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading wandb-summary.json","runtime_seconds":0.376957959,"progress":"269B/269B"},{"desc":"saving job artifact","runtime_seconds":0.376364069},{"desc":"uploading config.yaml","runtime_seconds":0.072272678,"progress":"989B/989B"},{"desc":"uploading output.log","runtime_seconds":0.072259856,"progress":"1.9KB/1.9KB"}],"total_operations":4}}
+{"time":"2024-11-30T13:46:54.640797702-03:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-30T13:46:56.275019481-03:00","level":"INFO","msg":"stream: closing","id":"rpg8exsa"}
+{"time":"2024-11-30T13:46:56.275036468-03:00","level":"INFO","msg":"handler: closed","stream_id":"rpg8exsa"}
+{"time":"2024-11-30T13:46:56.275045072-03:00","level":"INFO","msg":"writer: Close: closed","stream_id":"rpg8exsa"}
+{"time":"2024-11-30T13:46:56.2750791-03:00","level":"INFO","msg":"sender: closed","stream_id":"rpg8exsa"}
+{"time":"2024-11-30T13:46:56.275114159-03:00","level":"INFO","msg":"stream: closed","id":"rpg8exsa"}

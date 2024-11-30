@@ -1,0 +1,22 @@
+{"time":"2024-11-29T19:04:53.442369247-03:00","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2024-11-29T19:04:53.44238005-03:00","level":"INFO","msg":"created symlink","path":"/home/josei/workspace/RN/Tarea03_Deep_Learning/wandb/run-20241129_190448-yqub528s/logs/debug-core.log"}
+{"time":"2024-11-29T19:04:53.544488695-03:00","level":"INFO","msg":"created new stream","id":"yqub528s"}
+{"time":"2024-11-29T19:04:53.544516966-03:00","level":"INFO","msg":"stream: started","id":"yqub528s"}
+{"time":"2024-11-29T19:04:53.544542659-03:00","level":"INFO","msg":"sender: started","stream_id":"yqub528s"}
+{"time":"2024-11-29T19:04:53.544545304-03:00","level":"INFO","msg":"writer: Do: started","stream_id":"yqub528s"}
+{"time":"2024-11-29T19:04:53.544556733-03:00","level":"INFO","msg":"handler: started","stream_id":"yqub528s"}
+{"time":"2024-11-29T19:04:54.141670839-03:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-29T19:57:24.549506038-03:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)"}
+{"time":"2024-11-29T19:57:56.964621004-03:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": net/http: request canceled (Client.Timeout exceeded while awaiting headers)"}
+{"time":"2024-11-29T19:58:31.734453121-03:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": net/http: request canceled (Client.Timeout exceeded while awaiting headers)"}
+{"time":"2024-11-29T19:59:09.90375971-03:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": context deadline exceeded"}
+{"time":"2024-11-29T19:59:10.851252625-03:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/benjaminrromo-universidad-adolfo-ib-ez/Tarea03_Deep_Learning/yqub528s/file_stream\": dial tcp 35.186.228.49:443: connect: connection timed out"}
+{"time":"2024-11-29T20:23:04.046889472-03:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-29T20:23:04.048188841-03:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-29T20:23:05.047659377-03:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"saving job artifact","runtime_seconds":0.443769473},{"desc":"uploading wandb-summary.json","runtime_seconds":0.350723236,"progress":"263B/263B"},{"desc":"uploading config.yaml","runtime_seconds":0.145891751,"progress":"985B/985B"},{"desc":"uploading output.log","runtime_seconds":0.145883841,"progress":"2.5KB/2.5KB"}],"total_operations":4}}
+{"time":"2024-11-29T20:23:08.538328002-03:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-29T20:23:10.43164432-03:00","level":"INFO","msg":"stream: closing","id":"yqub528s"}
+{"time":"2024-11-29T20:23:10.43167986-03:00","level":"INFO","msg":"handler: closed","stream_id":"yqub528s"}
+{"time":"2024-11-29T20:23:10.431694937-03:00","level":"INFO","msg":"writer: Close: closed","stream_id":"yqub528s"}
+{"time":"2024-11-29T20:23:10.431745467-03:00","level":"INFO","msg":"sender: closed","stream_id":"yqub528s"}
+{"time":"2024-11-29T20:23:10.431793961-03:00","level":"INFO","msg":"stream: closed","id":"yqub528s"}

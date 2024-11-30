@@ -1,0 +1,22 @@
+{"time":"2024-11-29T22:41:47.862814606-03:00","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2024-11-29T22:41:47.862823176-03:00","level":"INFO","msg":"created symlink","path":"/home/josei/workspace/RN/Tarea03_Deep_Learning/wandb/run-20241129_224147-0hzdxxyf/logs/debug-core.log"}
+{"time":"2024-11-29T22:41:47.965639958-03:00","level":"INFO","msg":"created new stream","id":"0hzdxxyf"}
+{"time":"2024-11-29T22:41:47.965682924-03:00","level":"INFO","msg":"stream: started","id":"0hzdxxyf"}
+{"time":"2024-11-29T22:41:47.965720951-03:00","level":"INFO","msg":"writer: Do: started","stream_id":"0hzdxxyf"}
+{"time":"2024-11-29T22:41:47.965804748-03:00","level":"INFO","msg":"sender: started","stream_id":"0hzdxxyf"}
+{"time":"2024-11-29T22:41:47.965831562-03:00","level":"INFO","msg":"handler: started","stream_id":"0hzdxxyf"}
+{"time":"2024-11-29T22:41:48.487322072-03:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-29T23:03:48.729080138-03:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)"}
+{"time":"2024-11-29T23:04:21.030700112-03:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": net/http: request canceled (Client.Timeout exceeded while awaiting headers)"}
+{"time":"2024-11-29T23:04:55.650193055-03:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": net/http: request canceled (Client.Timeout exceeded while awaiting headers)"}
+{"time":"2024-11-29T23:05:32.93130888-03:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/benjaminrromo-universidad-adolfo-ib-ez/Tarea03_Deep_Learning/0hzdxxyf/file_stream\": dial tcp 35.186.228.49:443: connect: connection timed out"}
+{"time":"2024-11-29T23:06:24.979113252-03:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/benjaminrromo-universidad-adolfo-ib-ez/Tarea03_Deep_Learning/0hzdxxyf/file_stream\": dial tcp: lookup api.wandb.ai on 127.0.0.53:53: server misbehaving"}
+{"time":"2024-11-29T23:14:29.165390187-03:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-29T23:14:29.174718545-03:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-29T23:14:30.131952215-03:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"saving job artifact","runtime_seconds":0.47650231},{"desc":"uploading wandb-summary.json","runtime_seconds":0.373521641,"progress":"270B/270B"},{"desc":"uploading config.yaml","runtime_seconds":0.228749527,"progress":"983B/983B"},{"desc":"uploading output.log","runtime_seconds":0.228738906,"progress":"1.8KB/1.8KB"}],"total_operations":4}}
+{"time":"2024-11-29T23:14:30.423707071-03:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-29T23:14:32.344796033-03:00","level":"INFO","msg":"stream: closing","id":"0hzdxxyf"}
+{"time":"2024-11-29T23:14:32.344825434-03:00","level":"INFO","msg":"handler: closed","stream_id":"0hzdxxyf"}
+{"time":"2024-11-29T23:14:32.344836304-03:00","level":"INFO","msg":"writer: Close: closed","stream_id":"0hzdxxyf"}
+{"time":"2024-11-29T23:14:32.344849425-03:00","level":"INFO","msg":"sender: closed","stream_id":"0hzdxxyf"}
+{"time":"2024-11-29T23:14:32.344886711-03:00","level":"INFO","msg":"stream: closed","id":"0hzdxxyf"}

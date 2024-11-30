@@ -1,0 +1,18 @@
+{"time":"2024-11-30T15:21:53.376563202-03:00","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2024-11-30T15:21:53.376605237-03:00","level":"INFO","msg":"created symlink","path":"/home/josei/workspace/RN/Tarea03_Deep_Learning/wandb/run-20241130_152153-pf8pvdp2/logs/debug-core.log"}
+{"time":"2024-11-30T15:21:53.480515104-03:00","level":"INFO","msg":"created new stream","id":"pf8pvdp2"}
+{"time":"2024-11-30T15:21:53.480539674-03:00","level":"INFO","msg":"stream: started","id":"pf8pvdp2"}
+{"time":"2024-11-30T15:21:53.480724379-03:00","level":"INFO","msg":"handler: started","stream_id":"pf8pvdp2"}
+{"time":"2024-11-30T15:21:53.480748688-03:00","level":"INFO","msg":"sender: started","stream_id":"pf8pvdp2"}
+{"time":"2024-11-30T15:21:53.480744922-03:00","level":"INFO","msg":"writer: Do: started","stream_id":"pf8pvdp2"}
+{"time":"2024-11-30T15:21:54.202078092-03:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-30T15:24:34.84690928-03:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/benjaminrromo-universidad-adolfo-ib-ez/Tarea03_Deep_Learning/pf8pvdp2/file_stream\": dial tcp: lookup api.wandb.ai on 127.0.0.53:53: read udp 127.0.0.1:38846->127.0.0.53:53: i/o timeout"}
+{"time":"2024-11-30T16:02:46.331654575-03:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-30T16:02:46.332259264-03:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-30T16:02:47.294822889-03:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading wandb-summary.json","runtime_seconds":0.406254153,"progress":"267B/267B"},{"desc":"saving job artifact","runtime_seconds":0.406048083},{"desc":"uploading config.yaml","runtime_seconds":0.099878015,"progress":"979B/979B"},{"desc":"uploading output.log","runtime_seconds":0.099866145,"progress":"2.2KB/2.2KB"}],"total_operations":4}}
+{"time":"2024-11-30T16:02:47.678609107-03:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-30T16:02:49.440133514-03:00","level":"INFO","msg":"stream: closing","id":"pf8pvdp2"}
+{"time":"2024-11-30T16:02:49.440163553-03:00","level":"INFO","msg":"handler: closed","stream_id":"pf8pvdp2"}
+{"time":"2024-11-30T16:02:49.440169649-03:00","level":"INFO","msg":"writer: Close: closed","stream_id":"pf8pvdp2"}
+{"time":"2024-11-30T16:02:49.440181565-03:00","level":"INFO","msg":"sender: closed","stream_id":"pf8pvdp2"}
+{"time":"2024-11-30T16:02:49.440203986-03:00","level":"INFO","msg":"stream: closed","id":"pf8pvdp2"}

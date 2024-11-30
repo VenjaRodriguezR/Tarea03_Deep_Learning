@@ -1,0 +1,17 @@
+{"time":"2024-11-30T14:48:40.842533149-03:00","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2024-11-30T14:48:40.842547929-03:00","level":"INFO","msg":"created symlink","path":"/home/josei/workspace/RN/Tarea03_Deep_Learning/wandb/run-20241130_144840-r0j5l87x/logs/debug-core.log"}
+{"time":"2024-11-30T14:48:40.944530482-03:00","level":"INFO","msg":"created new stream","id":"r0j5l87x"}
+{"time":"2024-11-30T14:48:40.944573109-03:00","level":"INFO","msg":"stream: started","id":"r0j5l87x"}
+{"time":"2024-11-30T14:48:40.944609622-03:00","level":"INFO","msg":"writer: Do: started","stream_id":"r0j5l87x"}
+{"time":"2024-11-30T14:48:40.944665409-03:00","level":"INFO","msg":"handler: started","stream_id":"r0j5l87x"}
+{"time":"2024-11-30T14:48:40.944664681-03:00","level":"INFO","msg":"sender: started","stream_id":"r0j5l87x"}
+{"time":"2024-11-30T14:48:41.464058816-03:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-30T15:21:29.69309367-03:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-30T15:21:29.697692756-03:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-30T15:21:30.691171064-03:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"saving job artifact","runtime_seconds":0.467530239},{"desc":"uploading wandb-summary.json","runtime_seconds":0.369544333,"progress":"266B/266B"},{"desc":"uploading config.yaml","runtime_seconds":0.163229376,"progress":"977B/977B"},{"desc":"uploading output.log","runtime_seconds":0.163213009,"progress":"1.8KB/1.8KB"}],"total_operations":4}}
+{"time":"2024-11-30T15:21:31.552197851-03:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-30T15:21:33.38833483-03:00","level":"INFO","msg":"stream: closing","id":"r0j5l87x"}
+{"time":"2024-11-30T15:21:33.388380738-03:00","level":"INFO","msg":"handler: closed","stream_id":"r0j5l87x"}
+{"time":"2024-11-30T15:21:33.388399676-03:00","level":"INFO","msg":"writer: Close: closed","stream_id":"r0j5l87x"}
+{"time":"2024-11-30T15:21:33.388418879-03:00","level":"INFO","msg":"sender: closed","stream_id":"r0j5l87x"}
+{"time":"2024-11-30T15:21:33.38850492-03:00","level":"INFO","msg":"stream: closed","id":"r0j5l87x"}

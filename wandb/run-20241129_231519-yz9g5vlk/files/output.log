@@ -1,0 +1,9 @@
+  8%|▊         | 4/50 [11:12<2:08:52, 168.11s/it]
+Epoch: 1/50 - Time: 163.37s - Train Loss: 1.8418, Train Accuracy: 0.7170 - Validation Loss: 1.0967, Validation Accuracy: 0.8692
+Model checkpoint saved at epoch 1
+Epoch: 2/50 - Time: 164.48s - Train Loss: 1.4209, Train Accuracy: 0.7988 - Validation Loss: 1.1176, Validation Accuracy: 0.8527
+Epoch: 3/50 - Time: 163.93s - Train Loss: 1.4492, Train Accuracy: 0.8022 - Validation Loss: 1.1871, Validation Accuracy: 0.8509
+Epoch: 4/50 - Time: 165.44s - Train Loss: 1.5538, Train Accuracy: 0.8004 - Validation Loss: 1.3015, Validation Accuracy: 0.8403
+El mejor modelo según max_val_acc es {'architecture': 'efficientnet_b5.sw_in12k__bn_drp_unfreeze_416', 'model_type': 'efficientnet_b5.sw_in12k', 'best_epoch': 6, 'best_val_loss': 0.1831230824369244, 'best_train_loss': 0.10781560898565594, 'max_val_acc': 0.9565058350563049, 'test_accuracy': 0.0, 'training_params': {'learning_rate': 0.0003, 'batch_size': 32, 'num_epochs': 50}}
+El mejor modelo según best_val_loss es {'architecture': 'efficientnet_b5.sw_in12k__bn_drp_unfreeze_416', 'model_type': 'efficientnet_b5.sw_in12k', 'best_epoch': 6, 'best_val_loss': 0.1831230824369244, 'best_train_loss': 0.10781560898565594, 'max_val_acc': 0.9565058350563049, 'test_accuracy': 0.0, 'training_params': {'learning_rate': 0.0003, 'batch_size': 32, 'num_epochs': 50}}
+[34m[1mwandb[0m: [33mWARNING[0m Fatal error while uploading data. Some run data will not be synced, but it will still be written to disk. Use `wandb sync` at the end of the run to try uploading.

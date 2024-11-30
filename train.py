@@ -77,7 +77,7 @@ def train_model(
     train_metric = torchmetrics.Accuracy(task = "multiclass", num_classes = num_classes).to(device)
     val_metric = torchmetrics.Accuracy(task = "multiclass", num_classes = num_classes).to(device)
 
-    early_stopping_patience = 6
+    early_stopping_patience = 7
     best_val_loss = float("inf")
     patience_counter = 0
 
@@ -167,7 +167,7 @@ def train_model(
 
         # Early stopping
         if patience_counter >= early_stopping_patience:
-            print(f'Early stopping triggered at epoch {e-5}. Best Validation Loss: {best_val_loss:.4f}')
+            print(f'Early stopping triggered at epoch {e-6}. Best Validation Loss: {best_val_loss:.4f}')
             break
 
     wandb.finish()
@@ -177,19 +177,23 @@ def train_model(
 ##########################################################################################################
 ## We are gonna take a feature extraction approach
 class FrozenNet(nn.Module):
-    def __init__(self, num_classes: int = 47, frozen: bool = True, type: str = "efficientnet_b5.sw_in12k" ):
+    def __init__(self, num_classes: int = 47, frozen: bool = True, type: str = "efficientnet_b5.sw_in12k", pretraining: bool = True ):
         
         super().__init__()
         self.num_classes = num_classes
         # Cargar EfficientNet preentrenado de timm
-        self.backbone = timm.create_model(type, pretrained = True, num_classes = 0)
+        self.backbone = timm.create_model(type, pretrained = pretraining, num_classes = 0)
 
         if frozen:
             for param in self.backbone.parameters():
                 param.requires_grad = False
+                
+        for layer in [self.backbone.conv_head, self.backbone.bn2, self.backbone.global_pool]:
+            for param in layer.parameters():
+                param.requires_grad = True
 
         self.fc_layers = nn.Sequential(
-            nn.LazyLinear(512),          # Primera capa totalmente conectada
+            nn.Linear(2048, 512),          # Primera capa totalmente conectada
             nn.BatchNorm1d(512),         # Normalización por lotes para la salida de la capa
             nn.ReLU(),                   # Activación no lineal
             nn.Dropout(0.3),             # Dropout para prevenir el sobreajuste
@@ -201,6 +205,8 @@ class FrozenNet(nn.Module):
 
             nn.Linear(256, self.num_classes)  # Capa final de salida
         )
+
+        # self.fc_layers.apply(initialize_weights_kaiming)
 
     def forward(self, x):
         x = self.backbone(x)
@@ -274,7 +280,7 @@ def save_results_to_json(result_file: str, results: dict) -> None:
 
         # Escribir los resultados actualizados
         with open(result_file, "w") as f:
-            json.dump(existing_results, f, indent=4)
+            json.dump(existing_results, f, indent = 4)
         print(f"Resultados guardados correctamente en {result_file}")
     except Exception as e:
         print(f"Error al guardar resultados en JSON: {e}")
@@ -294,7 +300,8 @@ def run_experiment(
     result_file :str = "results/efficient_net.json",
     normalize:bool = True,
     use_float:bool = False,
-    resize_size: int = 256  # Tamaño de `resize` configurable
+    resize_size: int = 256,
+    pretraining = True  # Tamaño de `resize` configurable
 ):
     """
     Ejecuta un experimento completo: entrenamiento, validación y prueba.
@@ -332,7 +339,7 @@ def run_experiment(
     )
 
     # Crear el modelo
-    model = FrozenNet(num_classes = num_classes, frozen = frozen, type = model_type)
+    model = FrozenNet(num_classes = num_classes, frozen = frozen, type = model_type, pretraining = pretraining)
 
     try:
         # Entrenar el modelo
@@ -396,7 +403,7 @@ def automate_training(model_names: list, selected_transforms: list, num_classes:
     """
     for model_name in model_names:
         # Generate architecture_name dynamically
-        architecture_name = f"{model_name}_4_augmented_original_network_aug"
+        architecture_name = generate_architecture_name(model_name)
         
         print(f"Starting training for model: {model_name} with architecture_name: {architecture_name}")
         
@@ -448,6 +455,20 @@ def find_best_model(file_path: str, criterion: str = "max_val_acc"):
         best_model = max(data, key = lambda x: x[criterion])
 
     return best_model
+
+###################################################################################################3
+
+# Define una función para inicializar pesos usando Kaiming Normal
+def initialize_weights_kaiming(module: torch.nn.Module):
+    if isinstance(module, nn.Linear):  # Para capas lineales
+        nn.init.kaiming_normal_(module.weight, nonlinearity = 'relu')  # Inicialización Kaiming Normal
+        if module.bias is not None:  # Inicializa el sesgo si existe
+            nn.init.zeros_(module.bias)
+
+    elif isinstance(module, nn.Conv2d):  # Para capas convolucionales
+        nn.init.kaiming_normal_(module.weight, nonlinearity = 'relu')
+        if module.bias is not None:
+            nn.init.zeros_(module.bias)
 
 
 
