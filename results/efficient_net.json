@@ -236,5 +236,33 @@
             "batch_size": 32,
             "num_epochs": 50
         }
+    },
+    {
+        "architecture": "efficientnet_b5.sw_in12k__bn_drp_unfreeze_416_cj_cp",
+        "model_type": "efficientnet_b5.sw_in12k",
+        "best_epoch": 8,
+        "best_val_loss": 0.1826520143042936,
+        "best_train_loss": 0.16243836317299562,
+        "max_val_acc": 0.9539473652839661,
+        "test_accuracy": 0.0,
+        "training_params": {
+            "learning_rate": 0.0003,
+            "batch_size": 32,
+            "num_epochs": 50
+        }
+    },
+    {
+        "architecture": "efficientnet_b5.sw_in12k__over_reg_+_layer",
+        "model_type": "efficientnet_b5.sw_in12k",
+        "best_epoch": 8,
+        "best_val_loss": 0.17352047513596452,
+        "best_train_loss": 0.2949604469092464,
+        "max_val_acc": 0.9539473652839661,
+        "test_accuracy": 0.0,
+        "training_params": {
+            "learning_rate": 0.0003,
+            "batch_size": 32,
+            "num_epochs": 50
+        }
     }
 ]

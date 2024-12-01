@@ -5,3 +5,4 @@ house_plant_species/
 __pycache__/
 checkpoints/
 checkpoint_epoch_9.pth
+checkpoint_epoch_6.pth

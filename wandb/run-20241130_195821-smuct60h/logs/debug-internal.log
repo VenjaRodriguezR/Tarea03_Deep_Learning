@@ -1,0 +1,17 @@
+{"time":"2024-11-30T19:58:21.178541309-03:00","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2024-11-30T19:58:21.178552312-03:00","level":"INFO","msg":"created symlink","path":"/home/josei/workspace/RN/Tarea03_Deep_Learning/wandb/run-20241130_195821-smuct60h/logs/debug-core.log"}
+{"time":"2024-11-30T19:58:21.280479403-03:00","level":"INFO","msg":"created new stream","id":"smuct60h"}
+{"time":"2024-11-30T19:58:21.280517392-03:00","level":"INFO","msg":"stream: started","id":"smuct60h"}
+{"time":"2024-11-30T19:58:21.280556184-03:00","level":"INFO","msg":"writer: Do: started","stream_id":"smuct60h"}
+{"time":"2024-11-30T19:58:21.280560082-03:00","level":"INFO","msg":"sender: started","stream_id":"smuct60h"}
+{"time":"2024-11-30T19:58:21.280574526-03:00","level":"INFO","msg":"handler: started","stream_id":"smuct60h"}
+{"time":"2024-11-30T19:58:21.812116644-03:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-30T20:39:55.770026621-03:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-30T20:39:55.779484978-03:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-30T20:39:56.718113033-03:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"saving job artifact","runtime_seconds":0.529087198},{"desc":"uploading wandb-summary.json","runtime_seconds":0.434127299,"progress":"267B/267B"},{"desc":"uploading config.yaml","runtime_seconds":0.228734265,"progress":"1.0KB/1.0KB"},{"desc":"uploading output.log","runtime_seconds":0.228717528,"progress":"2.2KB/2.2KB"}],"total_operations":4}}
+{"time":"2024-11-30T20:39:57.053902536-03:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-30T20:39:58.850104134-03:00","level":"INFO","msg":"stream: closing","id":"smuct60h"}
+{"time":"2024-11-30T20:39:58.850129283-03:00","level":"INFO","msg":"handler: closed","stream_id":"smuct60h"}
+{"time":"2024-11-30T20:39:58.850144161-03:00","level":"INFO","msg":"writer: Close: closed","stream_id":"smuct60h"}
+{"time":"2024-11-30T20:39:58.850163348-03:00","level":"INFO","msg":"sender: closed","stream_id":"smuct60h"}
+{"time":"2024-11-30T20:39:58.850201906-03:00","level":"INFO","msg":"stream: closed","id":"smuct60h"}

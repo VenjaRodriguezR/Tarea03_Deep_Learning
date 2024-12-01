@@ -27,7 +27,7 @@ class Transforms:
 
         # Convierte a numpy array y aplica las transformaciones
         image = np.array(image)
-        transformed_image = self.transform(image=image)["image"]
+        transformed_image = self.transform(image = image)["image"]
 
         return transformed_image
 

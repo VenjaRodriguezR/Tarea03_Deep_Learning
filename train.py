@@ -167,7 +167,7 @@ def train_model(
 
         # Early stopping
         if patience_counter >= early_stopping_patience:
-            print(f'Early stopping triggered at epoch {e-6}. Best Validation Loss: {best_val_loss:.4f}')
+            print(f'Early stopping triggered at epoch {e - 5}. Best Validation Loss: {best_val_loss:.4f}')
             break
 
     wandb.finish()
