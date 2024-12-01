@@ -1,0 +1,11 @@
+{"time":"2024-12-01T19:57:06.491278705-03:00","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2024-12-01T19:57:06.491288522-03:00","level":"INFO","msg":"created symlink","path":"/home/josei/workspace/RN/Tarea03_Deep_Learning/wandb/run-20241201_195706-hl26dnrh/logs/debug-core.log"}
+{"time":"2024-12-01T19:57:06.592863286-03:00","level":"INFO","msg":"created new stream","id":"hl26dnrh"}
+{"time":"2024-12-01T19:57:06.592892782-03:00","level":"INFO","msg":"stream: started","id":"hl26dnrh"}
+{"time":"2024-12-01T19:57:06.592913738-03:00","level":"INFO","msg":"writer: Do: started","stream_id":"hl26dnrh"}
+{"time":"2024-12-01T19:57:06.592936999-03:00","level":"INFO","msg":"handler: started","stream_id":"hl26dnrh"}
+{"time":"2024-12-01T19:57:06.592946579-03:00","level":"INFO","msg":"sender: started","stream_id":"hl26dnrh"}
+{"time":"2024-12-01T19:57:07.049208407-03:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-12-01T19:57:07.606020505-03:00","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2024-12-01T19:58:23.096422266-03:00","level":"ERROR","msg":"HTTP error","status":404,"method":"POST","url":"https://api.wandb.ai/files/benjaminrromo-universidad-adolfo-ib-ez/Tarea03_Deep_Learning/hl26dnrh/file_stream"}
+{"time":"2024-12-01T19:58:23.096478054-03:00","level":"ERROR+4","msg":"filestream: fatal error: filestream: failed to upload: 404 Not Found path=files/benjaminrromo-universidad-adolfo-ib-ez/Tarea03_Deep_Learning/hl26dnrh/file_stream: {\"error\":\"run Tarea03_Deep_Learning/hl26dnrh not found while streaming file\"}"}

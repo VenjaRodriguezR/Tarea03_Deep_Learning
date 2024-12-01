@@ -167,7 +167,7 @@ def train_model(
 
         # Early stopping
         if patience_counter >= early_stopping_patience:
-            print(f'Early stopping triggered at epoch {e - 5}. Best Validation Loss: {best_val_loss:.4f}')
+            print(f'Early stopping triggered at epoch {e - 6}. Best Validation Loss: {best_val_loss:.4f}')
             break
 
     wandb.finish()
@@ -457,19 +457,6 @@ def find_best_model(file_path: str, criterion: str = "max_val_acc"):
     return best_model
 
 ###################################################################################################3
-
-# Define una función para inicializar pesos usando Kaiming Normal
-def initialize_weights_kaiming(module: torch.nn.Module):
-    if isinstance(module, nn.Linear):  # Para capas lineales
-        nn.init.kaiming_normal_(module.weight, nonlinearity = 'relu')  # Inicialización Kaiming Normal
-        if module.bias is not None:  # Inicializa el sesgo si existe
-            nn.init.zeros_(module.bias)
-
-    elif isinstance(module, nn.Conv2d):  # Para capas convolucionales
-        nn.init.kaiming_normal_(module.weight, nonlinearity = 'relu')
-        if module.bias is not None:
-            nn.init.zeros_(module.bias)
-
 
 
 

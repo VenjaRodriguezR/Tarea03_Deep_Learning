@@ -1,0 +1,19 @@
+  0%|          | 0/50 [00:00<?, ?it/s]
+Error durante el experimento: Caught AttributeError in DataLoader worker process 0.
+Original Traceback (most recent call last):
+  File "/home/josei/workspace/RN/RNENV/lib64/python3.12/site-packages/torch/utils/data/_utils/worker.py", line 351, in _worker_loop
+    data = fetcher.fetch(index)  # type: ignore[possibly-undefined]
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/josei/workspace/RN/RNENV/lib64/python3.12/site-packages/torch/utils/data/_utils/fetch.py", line 52, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+            ~~~~~~~~~~~~^^^^^
+  File "/home/josei/workspace/RN/RNENV/lib64/python3.12/site-packages/torchvision/datasets/folder.py", line 247, in __getitem__
+    sample = self.transform(sample)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/josei/workspace/RN/Tarea03_Deep_Learning/transforms.py", line 149, in <lambda>
+    img, train_dataset.class_to_idx[os.path.basename(os.path.dirname(img.filename))]
+                                                                     ^^^^^^^^^^^^
+AttributeError: 'Image' object has no attribute 'filename'
+
+Experimento terminado para efficientnet_b5.sw_in12k__bn_drp_unfreeze_416_cj_cp_aggr_da
+[34m[1mwandb[0m: [33mWARNING[0m Fatal error while uploading data. Some run data will not be synced, but it will still be written to disk. Use `wandb sync` at the end of the run to try uploading.

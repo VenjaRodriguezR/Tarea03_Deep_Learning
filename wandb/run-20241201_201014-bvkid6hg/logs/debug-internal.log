@@ -1,0 +1,17 @@
+{"time":"2024-12-01T20:10:14.081532852-03:00","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2024-12-01T20:10:14.081542453-03:00","level":"INFO","msg":"created symlink","path":"/home/josei/workspace/RN/Tarea03_Deep_Learning/wandb/run-20241201_201014-bvkid6hg/logs/debug-core.log"}
+{"time":"2024-12-01T20:10:14.183443279-03:00","level":"INFO","msg":"created new stream","id":"bvkid6hg"}
+{"time":"2024-12-01T20:10:14.183491617-03:00","level":"INFO","msg":"stream: started","id":"bvkid6hg"}
+{"time":"2024-12-01T20:10:14.183534959-03:00","level":"INFO","msg":"handler: started","stream_id":"bvkid6hg"}
+{"time":"2024-12-01T20:10:14.183527317-03:00","level":"INFO","msg":"writer: Do: started","stream_id":"bvkid6hg"}
+{"time":"2024-12-01T20:10:14.183575329-03:00","level":"INFO","msg":"sender: started","stream_id":"bvkid6hg"}
+{"time":"2024-12-01T20:10:14.694719963-03:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-12-01T20:51:46.913008087-03:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-12-01T20:51:46.913605497-03:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-12-01T20:51:47.87747835-03:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"saving job artifact","runtime_seconds":0.431749675},{"desc":"uploading wandb-summary.json","runtime_seconds":0.349102038,"progress":"267B/267B"},{"desc":"uploading config.yaml","runtime_seconds":0.142661853,"progress":"1.0KB/1.0KB"},{"desc":"uploading output.log","runtime_seconds":0.142642901,"progress":"2.2KB/2.2KB"}],"total_operations":4}}
+{"time":"2024-12-01T20:51:51.165838315-03:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-12-01T20:51:53.049724417-03:00","level":"INFO","msg":"stream: closing","id":"bvkid6hg"}
+{"time":"2024-12-01T20:51:53.049745691-03:00","level":"INFO","msg":"handler: closed","stream_id":"bvkid6hg"}
+{"time":"2024-12-01T20:51:53.049753352-03:00","level":"INFO","msg":"writer: Close: closed","stream_id":"bvkid6hg"}
+{"time":"2024-12-01T20:51:53.049760988-03:00","level":"INFO","msg":"sender: closed","stream_id":"bvkid6hg"}
+{"time":"2024-12-01T20:51:53.049785135-03:00","level":"INFO","msg":"stream: closed","id":"bvkid6hg"}

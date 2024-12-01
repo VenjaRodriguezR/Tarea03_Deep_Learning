@@ -1,0 +1,13 @@
+{"time":"2024-12-01T19:50:42.500638932-03:00","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2024-12-01T19:50:42.500647145-03:00","level":"INFO","msg":"created symlink","path":"/home/josei/workspace/RN/Tarea03_Deep_Learning/wandb/run-20241201_195042-86c2lnj8/logs/debug-core.log"}
+{"time":"2024-12-01T19:50:42.606780588-03:00","level":"INFO","msg":"created new stream","id":"86c2lnj8"}
+{"time":"2024-12-01T19:50:42.606816958-03:00","level":"INFO","msg":"stream: started","id":"86c2lnj8"}
+{"time":"2024-12-01T19:50:42.60683633-03:00","level":"INFO","msg":"writer: Do: started","stream_id":"86c2lnj8"}
+{"time":"2024-12-01T19:50:42.60685691-03:00","level":"INFO","msg":"handler: started","stream_id":"86c2lnj8"}
+{"time":"2024-12-01T19:50:42.606839685-03:00","level":"INFO","msg":"sender: started","stream_id":"86c2lnj8"}
+{"time":"2024-12-01T19:50:43.181188619-03:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-12-01T19:50:43.701428275-03:00","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2024-12-01T19:54:57.424712467-03:00","level":"INFO","msg":"Resuming system monitor"}
+{"time":"2024-12-01T19:54:57.464917715-03:00","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2024-12-01T19:54:57.883186249-03:00","level":"ERROR","msg":"HTTP error","status":404,"method":"POST","url":"https://api.wandb.ai/files/benjaminrromo-universidad-adolfo-ib-ez/Tarea03_Deep_Learning/86c2lnj8/file_stream"}
+{"time":"2024-12-01T19:54:57.883217217-03:00","level":"ERROR+4","msg":"filestream: fatal error: filestream: failed to upload: 404 Not Found path=files/benjaminrromo-universidad-adolfo-ib-ez/Tarea03_Deep_Learning/86c2lnj8/file_stream: {\"error\":\"run Tarea03_Deep_Learning/86c2lnj8 not found while streaming file\"}"}

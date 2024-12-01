@@ -7,7 +7,8 @@ import os
 from mpl_toolkits.axes_grid1 import ImageGrid
 from PIL import Image
 from torchvision.datasets import ImageFolder
-
+import timm
+from torch.utils.data import DataLoader
 
 SEED = 0
 
@@ -206,3 +207,46 @@ def visualize_transformed_images(dataset: ImageFolder, num_images: int = 5, figs
 
     plt.tight_layout()
     plt.show()
+
+#############################################################################
+
+def calculate_class_accuracies(model: timm.models, dataloader: DataLoader, class_labels: dict , device: str = 'cuda') -> dict:
+    """
+    Calcula la precisión por clase para un modelo dado.
+
+    Args:
+        model: El modelo cargado.
+        dataloader: DataLoader con datos de validación o prueba.
+        class_labels: Diccionario que mapea índices de clases a nombres.
+        device: Dispositivo para la evaluación ('cpu' o 'cuda').
+
+    Returns:
+        dict: Precisión por clase.
+    """
+    # Inicializar contadores
+    correct_per_class = defaultdict(int)
+    total_per_class = defaultdict(int)
+
+    # Cambiar el modelo al modo de evaluación
+    model.eval()
+    model.to(device)
+
+    with torch.no_grad():
+        for inputs, targets in dataloader:
+            inputs, targets = inputs.to(device), targets.to(device)
+            outputs = model(inputs)
+            predictions = torch.argmax(outputs, dim=1)
+
+            # Acumular correctos y totales por clase
+            for target, prediction in zip(targets, predictions):
+                total_per_class[target.item()] += 1
+                if target == prediction:
+                    correct_per_class[target.item()] += 1
+
+    # Calcular precisión por clase
+    class_accuracies = {
+        class_labels[class_idx]: correct_per_class[class_idx] / total_per_class[class_idx]
+        for class_idx in class_labels
+    }
+
+    return class_accuracies

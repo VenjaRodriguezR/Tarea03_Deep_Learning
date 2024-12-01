@@ -4,7 +4,6 @@ import timm
 import albumentations as A
 from albumentations.pytorch import ToTensorV2
 from torchvision import datasets
-import torch.nn as nn
 import numpy as np
 from train import FrozenNet
 import PIL
@@ -45,24 +44,7 @@ def load_model(use_checkpoint: bool, model_name: str = "efficientnet_b5.sw_in12k
 
 #####################################################################################################################3
 
-# Cargar el modelo
-model = load_model(
-    use_checkpoint = True,
-    model_name = "efficientnet_b5.sw_in12k",
-    checkpoint_path = "checkpoint_epoch_9.pth",
-    num_classes = 47 ,
-    in_channels = 3,
-)
 
-# Transformaciones de imagen
-transform = A.Compose([
-    A.Resize(416, 416),
-    A.ToFloat(),
-    ToTensorV2(),
-
-])
-
-#####################################################################################################################3
 
 # Función de predicción
 
@@ -84,31 +66,44 @@ def predict_species(image: PIL.Image.Image) -> str:
 
         return "¡Sube una imagen!"
     
+#####################################################################################################################3
 
-
-# Descripción de la aplicación
-description = """
-### Plantifier 🌿
-Bienvenido a **Plantifier**, tu clasificador de plantas de interior. Sube una imagen de una planta y el modelo intentará identificar su especie.
-"""
-
-
-
-
-# Crear la interfaz de Gradio con el tema 'small_and_pretty'
-
-interface = gr.Interface(
-    fn = predict_species,
-    inputs = gr.Image(type = "pil"),
-    outputs = "text",
-    title = "Plantifier 🌿",
-    description = description,
-    theme = 'JohnSmith9982/small_and_pretty',
-    live = True,
-    examples = ["images/bulbasaur.png", "images/exeggutor.png", "images/sunflora.png", "images/p_vs_z.png", "images/chikorita.png"]
-)
-
-   
-# Ejecutar la aplicación con Gradio
 if __name__ == "__main__":
+
+    # Cargar el modelo
+    model = load_model(
+        use_checkpoint = True,
+        model_name = "efficientnet_b5.sw_in12k",
+        checkpoint_path = "checkpoint_epoch_9.pth",
+        num_classes = 47 ,
+        in_channels = 3,
+    )
+
+    # Transformaciones de imagen
+    transform = A.Compose([
+        A.Resize(416, 416),
+        A.ToFloat(),
+        ToTensorV2(),
+
+    ])
+
+    # Descripción de la aplicación
+    description = """
+    ### Plantifier 🌿
+    Bienvenido a **Plantifier**, tu clasificador de plantas de interior. Sube una imagen de una planta y el modelo intentará identificar su especie.
+    """
+
+    # Crear la interfaz de Gradio con el tema 'small_and_pretty'
+
+    interface = gr.Interface(
+        fn = predict_species,
+        inputs = gr.Image(type = "pil"),
+        outputs = "text",
+        title = "Plantifier 🌿",
+        description = description,
+        theme = 'JohnSmith9982/small_and_pretty',
+        live = True,
+        examples = ["images/bulbasaur.png", "images/exeggutor.png", "images/sunflora.png", "images/p_vs_z.png", "images/chikorita.png"]
+    )
+
     interface.launch(share = False)

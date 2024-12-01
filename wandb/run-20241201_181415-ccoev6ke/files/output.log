@@ -1,0 +1,2 @@
+Error durante el experimento: 'DynamicTransformDataset' object has no attribute 'samples'
+Experimento terminado para efficientnet_b5.sw_in12k__bn_drp_unfreeze_416_cj_cp_da

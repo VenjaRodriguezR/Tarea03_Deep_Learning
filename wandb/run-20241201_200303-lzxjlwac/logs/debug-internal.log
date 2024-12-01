@@ -1,0 +1,11 @@
+{"time":"2024-12-01T20:03:03.275461615-03:00","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2024-12-01T20:03:03.275472948-03:00","level":"INFO","msg":"created symlink","path":"/home/josei/workspace/RN/Tarea03_Deep_Learning/wandb/run-20241201_200303-lzxjlwac/logs/debug-core.log"}
+{"time":"2024-12-01T20:03:03.377300554-03:00","level":"INFO","msg":"created new stream","id":"lzxjlwac"}
+{"time":"2024-12-01T20:03:03.377321043-03:00","level":"INFO","msg":"stream: started","id":"lzxjlwac"}
+{"time":"2024-12-01T20:03:03.377393834-03:00","level":"INFO","msg":"writer: Do: started","stream_id":"lzxjlwac"}
+{"time":"2024-12-01T20:03:03.377425234-03:00","level":"INFO","msg":"handler: started","stream_id":"lzxjlwac"}
+{"time":"2024-12-01T20:03:03.377439428-03:00","level":"INFO","msg":"sender: started","stream_id":"lzxjlwac"}
+{"time":"2024-12-01T20:03:03.698969973-03:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-12-01T20:08:20.547559111-03:00","level":"INFO","msg":"Pausing system monitor"}
+{"time":"2024-12-01T20:09:34.850075217-03:00","level":"ERROR","msg":"HTTP error","status":404,"method":"POST","url":"https://api.wandb.ai/files/benjaminrromo-universidad-adolfo-ib-ez/Tarea03_Deep_Learning/lzxjlwac/file_stream"}
+{"time":"2024-12-01T20:09:34.85017463-03:00","level":"ERROR+4","msg":"filestream: fatal error: filestream: failed to upload: 404 Not Found path=files/benjaminrromo-universidad-adolfo-ib-ez/Tarea03_Deep_Learning/lzxjlwac/file_stream: {\"error\":\"run Tarea03_Deep_Learning/lzxjlwac not found while streaming file\"}"}

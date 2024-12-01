@@ -264,5 +264,19 @@
             "batch_size": 32,
             "num_epochs": 50
         }
+    },
+    {
+        "architecture": "efficientnet_b5.sw_in12k__bn_drp_unfreeze_416_cj_cp_aggr_da",
+        "model_type": "efficientnet_b5.sw_in12k",
+        "best_epoch": 8,
+        "best_val_loss": 0.17748000069222208,
+        "best_train_loss": 0.12517472860105777,
+        "max_val_acc": 0.9546783566474915,
+        "test_accuracy": 0.0,
+        "training_params": {
+            "learning_rate": 0.0003,
+            "batch_size": 32,
+            "num_epochs": 50
+        }
     }
 ]
