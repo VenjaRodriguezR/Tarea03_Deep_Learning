@@ -1,7 +1,0 @@
-{"time":"2024-11-29T09:26:25.610307995-03:00","level":"INFO","msg":"using version","core version":"0.18.7"}
-{"time":"2024-11-29T09:26:25.61031613-03:00","level":"INFO","msg":"created symlink","path":"/home/josei/workspace/RN/Tarea03_Deep_Learning/wandb/run-20241129_092625-agx1cwep/logs/debug-core.log"}
-{"time":"2024-11-29T09:26:25.71229328-03:00","level":"INFO","msg":"created new stream","id":"agx1cwep"}
-{"time":"2024-11-29T09:26:25.712343536-03:00","level":"INFO","msg":"stream: started","id":"agx1cwep"}
-{"time":"2024-11-29T09:26:25.712437924-03:00","level":"INFO","msg":"handler: started","stream_id":"agx1cwep"}
-{"time":"2024-11-29T09:26:25.712437925-03:00","level":"INFO","msg":"writer: Do: started","stream_id":"agx1cwep"}
-{"time":"2024-11-29T09:26:25.712484238-03:00","level":"INFO","msg":"sender: started","stream_id":"agx1cwep"}

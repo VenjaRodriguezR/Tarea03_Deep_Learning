@@ -59,7 +59,7 @@ TRANSFORMATIONS_DIC = {
 
 #########################################################################################
 
-def get_transforms(selected_transforms: list, resize_size: int = 256, normalize: bool = False, use_float: bool = True) -> A.Compose:
+def get_transforms(selected_transforms: list, resize_size: int = 416, normalize: bool = False, use_float: bool = True) -> A.Compose:
     """
     Genera transformaciones dinámicas basadas en los parámetros dados.
 
@@ -75,14 +75,16 @@ def get_transforms(selected_transforms: list, resize_size: int = 256, normalize:
     # Transformaciones básicas iniciales con resize
     transforms = [TRANSFORMATIONS_DIC["resize"](resize_size)]
 
-    # Añadir augmentations seleccionados
-    transforms += [TRANSFORMATIONS_DIC[name] for name in selected_transforms]
-
     # Añadir normalización o conversión a flotante y ToTensor
     if normalize:
         transforms.append(TRANSFORMATIONS_DIC["normalize"])
     if use_float:
         transforms.append(A.ToFloat())
+        
+    # Añadir augmentations seleccionados
+    transforms += [TRANSFORMATIONS_DIC[name] for name in selected_transforms]
+
+
 
     transforms.append(ToTensorV2())
 
@@ -91,7 +93,7 @@ def get_transforms(selected_transforms: list, resize_size: int = 256, normalize:
 
 #########################################################################################
 
-def transforming(selected_transforms: list, resize_size: int = 256, normalize: bool = False, use_float: bool = True) -> tuple:
+def transforming(selected_transforms: list, resize_size: int = 416, normalize: bool = False, use_float: bool = True) -> tuple:
     """
     Crea los conjuntos de datos con augmentations para entrenamiento
     Aplica solo las transformaciones básicas al conjunto de validación

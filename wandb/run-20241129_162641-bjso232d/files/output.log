@@ -1,3 +1,0 @@
-  2%|▏         | 1/50 [03:52<3:09:38, 232.21s/it]
-Epoch: 1/50 - Time: 214.96s - Train Loss: 3.8312, Train Accuracy: 0.0383 - Validation Loss: 4.5600, Validation Accuracy: 0.0475
-Model checkpoint saved at epoch 1

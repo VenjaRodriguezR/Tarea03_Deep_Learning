@@ -1,9 +1,0 @@
-{"time":"2024-11-29T09:20:06.351507199-03:00","level":"INFO","msg":"using version","core version":"0.18.7"}
-{"time":"2024-11-29T09:20:06.351522753-03:00","level":"INFO","msg":"created symlink","path":"/home/josei/workspace/RN/Tarea03_Deep_Learning/wandb/run-20241129_092006-zw1k0n2y/logs/debug-core.log"}
-{"time":"2024-11-29T09:20:06.454504786-03:00","level":"INFO","msg":"created new stream","id":"zw1k0n2y"}
-{"time":"2024-11-29T09:20:06.454528323-03:00","level":"INFO","msg":"stream: started","id":"zw1k0n2y"}
-{"time":"2024-11-29T09:20:06.454625661-03:00","level":"INFO","msg":"writer: Do: started","stream_id":"zw1k0n2y"}
-{"time":"2024-11-29T09:20:06.454640677-03:00","level":"INFO","msg":"handler: started","stream_id":"zw1k0n2y"}
-{"time":"2024-11-29T09:20:06.454665516-03:00","level":"INFO","msg":"sender: started","stream_id":"zw1k0n2y"}
-{"time":"2024-11-29T09:20:06.859449172-03:00","level":"ERROR","msg":"HTTP error","status":400,"method":"POST","url":"https://api.wandb.ai/graphql"}
-{"time":"2024-11-29T09:20:06.859519284-03:00","level":"ERROR","msg":"sender: upsertRun:","error":"failed to upsert bucket: returned error 400 Bad Request: {\"errors\":[{\"message\":\"invalid tag 'efficientnet_b5.sw_in12k_augmented_dynamic_resize_test_network_aug'. must be between 1 and 64 characters\",\"path\":[\"upsertBucket\"]}],\"data\":{\"upsertBucket\":null}}"}

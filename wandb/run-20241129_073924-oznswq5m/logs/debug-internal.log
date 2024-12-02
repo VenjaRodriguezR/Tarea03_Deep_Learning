@@ -1,9 +1,0 @@
-{"time":"2024-11-29T07:39:24.732770762-03:00","level":"INFO","msg":"using version","core version":"0.18.7"}
-{"time":"2024-11-29T07:39:24.732798676-03:00","level":"INFO","msg":"created symlink","path":"/home/josei/workspace/RN/Tarea03_Deep_Learning/wandb/run-20241129_073924-oznswq5m/logs/debug-core.log"}
-{"time":"2024-11-29T07:39:24.834817038-03:00","level":"INFO","msg":"created new stream","id":"oznswq5m"}
-{"time":"2024-11-29T07:39:24.834838414-03:00","level":"INFO","msg":"stream: started","id":"oznswq5m"}
-{"time":"2024-11-29T07:39:24.834864251-03:00","level":"INFO","msg":"writer: Do: started","stream_id":"oznswq5m"}
-{"time":"2024-11-29T07:39:24.834940719-03:00","level":"INFO","msg":"handler: started","stream_id":"oznswq5m"}
-{"time":"2024-11-29T07:39:24.834960009-03:00","level":"INFO","msg":"sender: started","stream_id":"oznswq5m"}
-{"time":"2024-11-29T07:39:25.623818758-03:00","level":"INFO","msg":"Starting system monitor"}
-{"time":"2024-11-29T07:39:27.466195435-03:00","level":"INFO","msg":"Pausing system monitor"}

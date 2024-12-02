@@ -1,9 +1,0 @@
-{"time":"2024-12-01T18:14:15.726717876-03:00","level":"INFO","msg":"using version","core version":"0.18.7"}
-{"time":"2024-12-01T18:14:15.726732435-03:00","level":"INFO","msg":"created symlink","path":"/home/josei/workspace/RN/Tarea03_Deep_Learning/wandb/run-20241201_181415-ccoev6ke/logs/debug-core.log"}
-{"time":"2024-12-01T18:14:15.830171047-03:00","level":"INFO","msg":"created new stream","id":"ccoev6ke"}
-{"time":"2024-12-01T18:14:15.830230461-03:00","level":"INFO","msg":"stream: started","id":"ccoev6ke"}
-{"time":"2024-12-01T18:14:15.830274587-03:00","level":"INFO","msg":"writer: Do: started","stream_id":"ccoev6ke"}
-{"time":"2024-12-01T18:14:15.83027933-03:00","level":"INFO","msg":"handler: started","stream_id":"ccoev6ke"}
-{"time":"2024-12-01T18:14:15.830311759-03:00","level":"INFO","msg":"sender: started","stream_id":"ccoev6ke"}
-{"time":"2024-12-01T18:14:16.549072776-03:00","level":"INFO","msg":"Starting system monitor"}
-{"time":"2024-12-01T18:14:17.091684071-03:00","level":"INFO","msg":"Pausing system monitor"}

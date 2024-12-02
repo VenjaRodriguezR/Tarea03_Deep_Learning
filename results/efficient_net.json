@@ -278,5 +278,75 @@
             "batch_size": 32,
             "num_epochs": 50
         }
+    },
+    {
+        "architecture": "efficientnet_b5.sw_in12k__bn_drp_unfreeze_416_cj_cp_ff",
+        "model_type": "efficientnet_b5.sw_in12k",
+        "best_epoch": 8,
+        "best_val_loss": 0.1635515340421143,
+        "best_train_loss": 0.8651590818131464,
+        "max_val_acc": 0.9546783566474915,
+        "test_accuracy": 0.0,
+        "training_params": {
+            "learning_rate": 0.0003,
+            "batch_size": 32,
+            "num_epochs": 50
+        }
+    },
+    {
+        "architecture": "efficientnet_b5.sw_in12k__bn_drp_unfreeze_416_cj_cp_b64_ff",
+        "model_type": "efficientnet_b5.sw_in12k",
+        "best_epoch": 8,
+        "best_val_loss": 0.1554810376621263,
+        "best_train_loss": 0.86472033255199,
+        "max_val_acc": 0.9590643048286438,
+        "test_accuracy": 0.0,
+        "training_params": {
+            "learning_rate": 0.0003,
+            "batch_size": 64,
+            "num_epochs": 50
+        }
+    },
+    {
+        "architecture": "efficientnet_b5.sw_in12k__bn_drp_unfreeze_416_cj_cp_b64_ff_V2",
+        "model_type": "efficientnet_b5.sw_in12k",
+        "best_epoch": 8,
+        "best_val_loss": 0.1569264397826479,
+        "best_train_loss": 0.9051962508957767,
+        "max_val_acc": 0.9586988091468811,
+        "test_accuracy": 0.0,
+        "training_params": {
+            "learning_rate": 0.0003,
+            "batch_size": 64,
+            "num_epochs": 50
+        }
+    },
+    {
+        "architecture": "efficientnet_b5.sw_in12k__bn_drp_unfreeze_416_cj_cp_b84_ff",
+        "model_type": "efficientnet_b5.sw_in12k",
+        "best_epoch": 11,
+        "best_val_loss": 0.15440661564582225,
+        "best_train_loss": 0.7508407854475081,
+        "max_val_acc": 0.9597952961921692,
+        "test_accuracy": 0.0,
+        "training_params": {
+            "learning_rate": 0.0003,
+            "batch_size": 84,
+            "num_epochs": 50
+        }
+    },
+    {
+        "architecture": "efficientnet_b5.sw_in12k__bn_drp_unfreeze_416_cj_cp_b88_ff",
+        "model_type": "efficientnet_b5.sw_in12k",
+        "best_epoch": 11,
+        "best_val_loss": 0.14713793000555597,
+        "best_train_loss": 0.7795222195667949,
+        "max_val_acc": 0.9608917832374573,
+        "test_accuracy": 0.0,
+        "training_params": {
+            "learning_rate": 0.0003,
+            "batch_size": 88,
+            "num_epochs": 50
+        }
     }
 ]

@@ -8,6 +8,7 @@ import numpy as np
 from train import FrozenNet
 import PIL
 
+
 # Obtener etiquetas de clases desde las carpetas del dataset
 def get_class_labels(data_path: str) -> dict:
 

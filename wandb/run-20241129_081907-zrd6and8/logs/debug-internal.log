@@ -1,8 +1,0 @@
-{"time":"2024-11-29T08:19:10.560610167-03:00","level":"INFO","msg":"using version","core version":"0.18.7"}
-{"time":"2024-11-29T08:19:10.560619218-03:00","level":"INFO","msg":"created symlink","path":"/home/josei/workspace/RN/Tarea03_Deep_Learning/wandb/run-20241129_081907-zrd6and8/logs/debug-core.log"}
-{"time":"2024-11-29T08:19:10.663351465-03:00","level":"INFO","msg":"created new stream","id":"zrd6and8"}
-{"time":"2024-11-29T08:19:10.663374234-03:00","level":"INFO","msg":"stream: started","id":"zrd6and8"}
-{"time":"2024-11-29T08:19:10.663383218-03:00","level":"INFO","msg":"writer: Do: started","stream_id":"zrd6and8"}
-{"time":"2024-11-29T08:19:10.663445779-03:00","level":"INFO","msg":"sender: started","stream_id":"zrd6and8"}
-{"time":"2024-11-29T08:19:10.663460332-03:00","level":"INFO","msg":"handler: started","stream_id":"zrd6and8"}
-{"time":"2024-11-29T08:19:11.254197343-03:00","level":"INFO","msg":"Starting system monitor"}

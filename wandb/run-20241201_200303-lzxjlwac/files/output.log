@@ -1,4 +1,0 @@
-  2%|▏         | 1/50 [05:16<4:18:06, 316.06s/it]
-Epoch: 1/50 - Time: 161.35s - Train Loss: 1.5056, Train Accuracy: 0.7336 - Validation Loss: 0.4440, Validation Accuracy: 0.9174
-Model checkpoint saved at epoch 1
-[34m[1mwandb[0m: [33mWARNING[0m Fatal error while uploading data. Some run data will not be synced, but it will still be written to disk. Use `wandb sync` at the end of the run to try uploading.

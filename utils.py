@@ -44,6 +44,7 @@ def set_seed(seed: int = SEED) -> None:
     np.random.seed(seed)
     random.seed(seed)
 
+
 #############################################################################
 # COUNTS INSTANCES OF PLANT IMAGES BY CLASS
 
@@ -235,7 +236,7 @@ def calculate_class_accuracies(model: timm.models, dataloader: DataLoader, class
         for inputs, targets in dataloader:
             inputs, targets = inputs.to(device), targets.to(device)
             outputs = model(inputs)
-            predictions = torch.argmax(outputs, dim=1)
+            predictions = torch.argmax(outputs, dim = 1)
 
             # Acumular correctos y totales por clase
             for target, prediction in zip(targets, predictions):
