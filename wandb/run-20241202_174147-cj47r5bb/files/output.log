@@ -1,5 +1,0 @@
-Initial max val_accuracy: 0.9598, Second best: 0.9591
-  0%|          | 0/50 [00:08<?, ?it/s]
-
-Error durante el experimento: CUDA error: CUBLAS_STATUS_ALLOC_FAILED when calling `cublasCreate(handle)`
-Experimento terminado para efficientnet_b5.sw_in12k__bn_drp_unfreeze_416_cj_cp_b90_ff

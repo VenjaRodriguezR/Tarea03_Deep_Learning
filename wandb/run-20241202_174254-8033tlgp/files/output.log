@@ -1,5 +1,0 @@
-Initial max val_accuracy: 0.9598, Second best: 0.9591
-  0%|          | 0/50 [00:12<?, ?it/s]
-
-Error durante el experimento: CUDA out of memory. Tried to allocate 2.07 GiB. GPU 0 has a total capacity of 5.70 GiB of which 2.05 GiB is free. Including non-PyTorch memory, this process has 3.62 GiB memory in use. Of the allocated memory 3.41 GiB is allocated by PyTorch, and 62.09 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
-Experimento terminado para efficientnet_b5.sw_in12k__bn_drp_unfreeze_416_cj_cp_b89_ff

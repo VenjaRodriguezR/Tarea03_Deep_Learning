@@ -1,9 +1,0 @@
-{"time":"2024-12-02T15:45:56.343991127-03:00","level":"INFO","msg":"using version","core version":"0.18.7"}
-{"time":"2024-12-02T15:45:56.344004111-03:00","level":"INFO","msg":"created symlink","path":"/home/josei/workspace/RN/Tarea03_Deep_Learning/wandb/run-20241202_154556-ombpktyq/logs/debug-core.log"}
-{"time":"2024-12-02T15:45:56.446674312-03:00","level":"INFO","msg":"created new stream","id":"ombpktyq"}
-{"time":"2024-12-02T15:45:56.446740475-03:00","level":"INFO","msg":"stream: started","id":"ombpktyq"}
-{"time":"2024-12-02T15:45:56.446741494-03:00","level":"INFO","msg":"sender: started","stream_id":"ombpktyq"}
-{"time":"2024-12-02T15:45:56.446739323-03:00","level":"INFO","msg":"writer: Do: started","stream_id":"ombpktyq"}
-{"time":"2024-12-02T15:45:56.446787997-03:00","level":"INFO","msg":"handler: started","stream_id":"ombpktyq"}
-{"time":"2024-12-02T15:45:57.074011665-03:00","level":"INFO","msg":"Starting system monitor"}
-{"time":"2024-12-02T15:46:10.119634263-03:00","level":"INFO","msg":"Pausing system monitor"}

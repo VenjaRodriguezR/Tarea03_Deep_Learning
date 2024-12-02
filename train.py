@@ -56,17 +56,15 @@ def train_model(
 
     # Leer los valores máximos de val_accuracy registrados en el JSON
     max_val_acc_registered = 0
-    second_best_val_acc = 0  # Inicializamos como el segundo mejor valor
     if os.path.exists(results_file):
         with open(results_file, "r") as f:
             results = json.load(f)
             if results:
                 val_accs = [res.get("max_val_acc", 0) for res in results]
                 max_val_acc_registered = max(val_accs)
-                val_accs.remove(max_val_acc_registered)
-                second_best_val_acc = max(val_accs) if val_accs else 0
 
-    print(f"Initial max val_accuracy: {max_val_acc_registered:.4f}, Second best: {second_best_val_acc:.4f}\n")
+
+    print(f"Initial max val_accuracy: {max_val_acc_registered:.4f}\n")
 
     # DataLoaders
     train_dataloader = DataLoader(
@@ -180,21 +178,16 @@ def train_model(
         else:
             patience_counter += 1
 
-        # Guardar si el val_accuracy actual supera al segundo mejor registrado
-        if val_acc.item() > second_best_val_acc:
+    
             # Actualizar referencias de mejores valores
-            if val_acc.item() > max_val_acc_registered:
-                second_best_val_acc = max_val_acc_registered
+        if val_acc.item() > max_val_acc_registered:
                 max_val_acc_registered = val_acc.item()
-            else:
-                second_best_val_acc = val_acc.item()
-            
-            patience_counter = 0
+                patience_counter = 0
 
-            # Guardar el checkpoint
-            checkpoint_path = os.path.join(checkpoint_dir, f'checkpoint_best_acc_epoch_{e+1}.pth')
-            torch.save(model.state_dict(), checkpoint_path)
-            print(f"Saved checkpoint for val_accuracy > second_best at epoch {e+1}")
+                # Guardar el checkpoint
+                checkpoint_path = os.path.join(checkpoint_dir, f'checkpoint_best_acc_epoch_{e+1}.pth')
+                torch.save(model.state_dict(), checkpoint_path)
+                print(f"Saved checkpoint for val_accuracy at epoch {e+1}")
 
         # Early stopping
         if patience_counter >= early_stopping_patience:

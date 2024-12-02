@@ -75,7 +75,7 @@ if __name__ == "__main__":
     model = load_model(
         use_checkpoint = True,
         model_name = "efficientnet_b5.sw_in12k",
-        checkpoint_path = "checkpoint_epoch_9.pth",
+        checkpoint_path = "checkpoint_god.pth",
         num_classes = 47 ,
         in_channels = 3,
     )

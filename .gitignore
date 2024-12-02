@@ -4,3 +4,5 @@ house_plant_species/
 *.zip
 __pycache__/
 *.pth
+checkpoints/
+wandb/
