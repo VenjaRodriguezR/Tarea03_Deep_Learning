@@ -14,6 +14,7 @@ import json
 from utils import generate_architecture_name
 from torchvision.datasets import ImageFolder
 
+#50aa86371c9b65a4978632bee8fbef31 -> Mensaje Encriptado (si lo resuelve, hay premio)
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
@@ -240,41 +241,7 @@ class FrozenNet(nn.Module):
     
 
 ##############################################################################################################
-def testing(model_input: timm.models, data_eva: ImageFolder, training_params: dict):
-    # Cambiar el modelo al modo de evaluación
-    model_input.eval()
 
-    # Inicializar el cálculo de F1-score
-    acc_metric = torchmetrics.Accuracy(task = "multiclass", num_classes = 47).to(device)
-    acc_metric.reset()
-    data_eva = DataLoader(data_eva, batch_size = training_params["batch_size"], shuffle = False, num_workers = 6, pin_memory = True)
-    criterion = nn.CrossEntropyLoss()
-    # Desactivar el cálculo de gradientes ya que no necesitamos backpropagation
-    with torch.no_grad():
-        test_loss = []
-        # Iterar sobre el conjunto de datos de test
-        for batch in data_eva:
-            # Mover los datos al dispositivo adecuado (CPU o GPU)
-            features, target = batch[0].to(device), batch[1].to(device)
-            # Hacer predicciones con el modelo
-            output = model_input(features)
-            loss = criterion(output, target.squeeze())  # Asegurarse de que las dimensiones coincidan
-            test_loss.append(loss.item())
-
-            # Convertir las predicciones a clases con la probabilidad máxima
-            preds = torch.argmax(output, dim = 1)
-
-            # Actualizar el cálculo del la accuracy
-            acc_metric.update(preds, target)
-
-    # Calcular la accuracy final
-    acc_score = acc_metric.compute().item()
-
-    print(f'Test Accuracy: {acc_score:.5f}')
-
-    return acc_score
-
-####################################################################################33
 def save_results_to_json(result_file: str, results: dict) -> None:
     """
     Guarda los resultados en un archivo JSON, asegurando que los datos sean serializables.
@@ -325,7 +292,7 @@ def run_experiment(
     result_file :str = "results/efficient_net.json",
     normalize:bool = True,
     use_float:bool = False,
-    resize_size: int = 256,
+    resize_size: int = 416,
     pretraining = True  # Tamaño de `resize` configurable
 ):
     """
@@ -410,42 +377,6 @@ def run_experiment(
 
     print(f"Experimento terminado para {architecture_name}")
 
-
-
-################################################################################
-def automate_training(model_names: list, selected_transforms: list, num_classes: int, 
-                      training_params: dict, frozen: bool = True, result_file: str = "efficient_net.json"):
-    """
-    Automate training for a list of model names from timm.
-    
-    Args:
-        model_names (list): List of model names as they appear in timm.
-        selected_transforms (list): List of augmentations to apply.
-        num_classes (int): Number of classes in the classification task.
-        training_params (dict): Training parameters (learning rate, batch size, num epochs).
-        frozen (bool): Whether to freeze the backbone during training.
-        result_file (str): Path to the JSON file for saving results.
-    """
-    for model_name in model_names:
-        # Generate architecture_name dynamically
-        architecture_name = generate_architecture_name(model_name)
-        
-        print(f"Starting training for model: {model_name} with architecture_name: {architecture_name}")
-        
-        try:
-            # Run the experiment
-            run_experiment(
-                selected_transforms = selected_transforms,
-                architecture_name = architecture_name,
-                model_type = model_name,
-                num_classes = num_classes,
-                training_params = training_params,
-                frozen = frozen,
-                result_file = result_file,  # Pasar el archivo de resultados
-            )
-        except Exception as e:
-            print(f"Error occurred while training model {model_name}: {e}")
-        print(f"Finished training for model: {model_name}\n")
 
 ###################################################################################################################
 import json

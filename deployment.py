@@ -46,19 +46,19 @@ def load_model(use_checkpoint: bool, model_name: str = "efficientnet_b5.sw_in12k
 #####################################################################################################################3
 
 
-
 # Función de predicción
 
 def predict_species(image: PIL.Image.Image) -> str:
 
     try:
-
+             
         image = transform(image = np.array(image))["image"].unsqueeze(0)  # Añadir dimensión de batch
 
         with torch.no_grad():
             outputs = model(image).squeeze(0)
             probabilities = torch.nn.functional.softmax(outputs, dim = 0)
             top_idx = probabilities.argmax().item()
+
 
         
         return f"🌱 Predicción: {class_labels[top_idx]} (Confianza: {probabilities[top_idx]: .2f})"
